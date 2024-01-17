@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>BlogEvents</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css'  ) }}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
+    
+    <script src= "https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/min/dropzone.min.js"> 
+    </script> 
+
+</head>
+
+<body>
+    
+
+    <div class="container_slider">
+      
+        <div class="slider">    
+
+            <div class="slide" style="text-align: center; width: 100%; opacity: 0.8; padding: 310px 50px; height: 90%; position: relative; background-size: cover; background-image: url('/static/img/tecnologia.png');">
+                <p style="font-size: 75px; font-family: 'Lucida Bright'; position: relative; bottom: 120px; color:  #E5E5F9 ;"> el cambio somos nosotros para la calidad de negocio</p>
+            </div>
+
+            <div class="slide1" style="text-align: center; width: 100%;  opacity: 0.8; padding: 310px 50px; height: 80%; position: relative; background-size: cover; background-image: url('/static/img/tecnologia.png');">
+                <p style="font-size: 75px; font-family: 'Lucida Bright'; position: relative; bottom: 120px; color: #E5E5F9 ;"> el cambio somos nosotros para la calidad de negocio</p>
+            </div>
+
+            <div class="slide2" style="text-align: center; width: 100%;  opacity: 0.8; padding: 310px 50px; height: 80%; position: relative; background-size: cover; background-image: url('/static/img/tecnologia.png');">
+                <p style="font-size: 75px; font-family: 'Lucida Bright'; position: relative; bottom: 120px; color:  #E5E5F9 ;"> el cambio somos nosotros para la calidad de negocio</p>
+            </div>
+
+            <div class="slide3" style="text-align: center; width: 100%;  opacity: 0.8; padding: 310px 50px; height: 80%; position: relative; background-size: cover; background-image: url('/static/img/tecnologia.png');">
+                <p style="font-size: 75px; font-family: 'Lucida Bright'; position: relative; bottom: 120px; color:  #E5E5F9 ;">el cambio somos nosotros para la calidad de negocio</p>
+            </div>
+        
+        </div>
+
+    </div>
+
+    <div class="fondo">
+
+
+        <header class="header">  
+
+            <img src="" class="menu_logo" >
+            <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+
+                
+                <div class="container-fluid" style="justify-content: center;
+                margin-left: 75%; position: relative; top: 10%;">
+                  <a id="link" class="navbar-brand" href="http://localhost:5000/login.html">Login</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                      <a id="link" class="navbar-brand" aria-current="page" href="#">Inicio</a>
+                      <a id="link" class="navbar-brand" href="#">Nosotros</a>
+                      <a id="link" class="navbar-brand" href="#">Eventos</a>
+                      <a id="link" class="navbar-brand" href="#">Contacto</a>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+    
+        </header>
+
+        <div class="contenedor_nosotros">
+        
+        <img src="{{url_for('static', filename='img/nosotros2.png')}}" class="img_nosotros">
+
+        <p class="letra">TecnoEvent</p>
+
+        <div class="contenedor_texto">
+            <p class="texto_letra">Ven a Conocer Nuestras Distintas Categorias de Eventos </p>
+        </div>
+
+
+        </div>
+
+    
+
+        <a  href="https://api.whatsapp.com/send?phone=931333274"><img class="icono" src="{{url_for('static', filename='img/whatsapp-fill.png')}}" style="position: relative;  width: 50px; height: 50px;">
+        </a>
+
+        <a href="https://www.instagram.com/"><img class="icono2" src="{{url_for('static', filename='img/instagram-fill.png')}}"></a>
+
+        <a href="https://twitter.com/?lang=es"><img class="icono3" src="{{url_for('static', filename='img/twitter-fill (2).png')}}"></a>
+
+        <a href="https://facebook.com/"><img class="icono4" src="{{url_for('static', filename='img/facebook-circle-fill.png')}}"></a>
+        
+
+
+        <div id="habitaciones" class="habitacion">
+            <a href="#" value="" id="Quienes" class="btn btn-dark">Quienes Somos</a>
+            
+        <div class="modal" id="ventanaModal" tabindex="-1" role="dialog" aria-labelledby="tituloVentana" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 id="tituloVentana">Informacion Eventos Web </h5>
+                        <button class="close" data-dismiss="modal" aria-label="Cerrar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="alert alert-success">
+                            <h4><strong></strong> Nosotros Entregamos un Servicio de Calidad Confiable y Seguro </h4>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button class="btn btn-warning" type="button" data-dismiss="modal">
+                            Cerrar
+                        </button>
+                        <button class="btn btn-success" type="button" data-dismiss="modal">
+                            Aceptar
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ventanaModal" style="width: 10%; position: relative; left: 35%;">
+                Informacion
+            </button>
+
+        
+        <div class="contenido">
+
+                <div class="targeta simple">
+                    <div class="simple__estructura">
+                        <p>ofrecer un servicio de mejora continua para el sistema de eventos productivos empresariales
+                        </p>
+                        <div class="descripcion">
+
+
+                        </div>
+                    </div>
+                    <div class="simple__img">
+
+                    </div>
+                </div>
+        </div>
+
+        </div>
+
+        <div class="conten_mision">
+
+            <h3 class="btn btn-outline-secondary" style="width: 10%; position: relative; top: 10%; margin-left: 37%; right: 210px;">Mision</h3>
+            <div class="card" style="width: 25rem; position: relative; top: 130px; left: 350px; margin: 10px;">
+                <img src="{{url_for('static', filename='img/mision2023.jpg')}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text" style="font-size: 25px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+
+            <h3 class="btn btn-outline-secondary" style="width: 10%; position: relative; bottom: 65%; margin-left: 37%; left: 520px;">vision</h3>
+            <div class="card" style="width: 25rem; position: relative; bottom: 400px; left: 1100px; margin: 10px;">
+                <img src="{{url_for('static', filename='img/mision2023.jpg')}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text" style="font-size: 25px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="box">
+            <h3 class="btn btn-dark" style="width: 15%; position: relative; bottom: 50px; margin-left: 37%; right: 20px;">Funcionalidades</h3>
+            <div id="accordion">
+                <h3 class="btn btn-dark">Section 1</h3>
+                <div>
+                  <p style="font-size: 20px;">
+                  Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+                  ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+                  amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+                  odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+                  </p>
+                </div>
+                <h3 class="btn btn-dark">Section 2</h3>
+                <div>
+                  <p style="font-size: 20px;">
+                  Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+                  purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+                  velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+                  suscipit faucibus urna.
+                  </p>
+                </div>
+                <h3 class="btn btn-dark">Section 3</h3>
+                <div>
+                  <p style="font-size: 20px;">
+                  Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+                  Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+                  ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+                  lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+                  </p>
+                  <ul style="font-size: 20px;">
+                    <li>List item one</li>
+                    <li>List item two</li>
+                    <li>List item three</li>
+                  </ul>
+                </div>
+                <h3 class="btn btn-dark">Section 4</h3>
+                <div>
+                  <p style="font-size: 20px;">
+                  Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+                  et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+                  faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+                  mauris vel est.
+                  </p>
+                  <p style="font-size: 20px;">
+                  Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+                  Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+                  inceptos himenaeos.
+                  </p>
+                </div>
+                <h3 class="btn btn-dark">Section 5</h3>
+                <div>
+                  <p style="font-size: 20px;">
+                  Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+                  et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+                  faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+                  mauris vel est.
+                  </p>
+                  <p style="font-size: 20px;">
+                  Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+                  Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+                  inceptos himenaeos.
+                  </p>
+                </div>
+              </div>
+
+              
+
+        </div>
+        
+        
+
+        <div class="container-progress">
+
+            
+            <button id="button" type="submit" class="btn btn-success" style="margin-left: 1400px; position: relative; top: 35px; width: 200px;" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Progreso
+            </button>
+
+            <script src="{{ url_for('static', filename='script/modal.js') }}"></script>
+            
+        
+            <div class="content">
+
+                <h1 class="chart">
+                    Estadistica Web
+                </h1>
+                <canvas id="grafico"></canvas>
+                
+                
+            </div>
+            <script src="{{ url_for('static', filename='script/chart.js') }}"></script>
+      
+            
+            
+            <!--div class="progress" role="progressbar" aria-label="Default striped example" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar progress-bar-striped" style="width: 10%"></div>
+              </div>
+              <div class="progress" role="progressbar" aria-label="Success striped example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar progress-bar-striped bg-success" style="width: 25%"></div>
+              </div>
+              <div class="progress" role="progressbar" aria-label="Info striped example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar progress-bar-striped bg-info" style="width: 50%"></div>
+              </div>
+              <div class="progress" role="progressbar" aria-label="Warning striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar progress-bar-striped bg-warning" style="width: 75%"></div>
+              </div>
+              <div class="progress" role="progressbar" aria-label="Danger striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar progress-bar-striped bg-danger" style="width: 100%"></div>
+              </div-->
+        </div>
+
+        
+        <!--div class="contenedor_carusel">
+            <div class="carousel">
+             <h2>Carrusel de Imagenes</h2>
+                <div class="slick-list" id="slick-list">
+                    <button class="slick-arrow slick-prev" id="buttom-prev">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+                    </button>
+                  <div class="slick-track" id="track">
+                    <div class="slick">
+                        <div>
+                            <a href="/"></a>
+                            <h4><small>Photo 1</small></h4>
+                            <picture>
+                                <img src="/static/img/carusel8.png" alt="Image">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="slick">
+                        <div>
+                            <a href="/"></a>
+                            <h4><small>Photo 2</small></h4>
+                            <picture>
+                                <img src="/static/img/carusel8.png" alt="Image">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="slick">
+                        <div>
+                            <a href="/"></a>
+                            <h4><small>Photo 3</small></h4>
+                            <picture>
+                                <img src="/static/img/carusel8.png" alt="Image">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="slick">
+                        <div>
+                            <a href="/"></a>
+                            <h4><small>Photo 4</small></h4>
+                            <picture>
+                                <img src="/static/img/carusel8.png" alt="Image">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="slick">
+                        <div>
+                            <a href="/"></a>
+                            <h4><small>Photo 5</small></h4>
+                            <picture>
+                                <img src="/static/img/carusel8.png" alt="Image">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="slick">
+                        <div>
+                            <a href="/"></a>
+                            <h4><small>Photo 6</small></h4>
+                            <picture>
+                                <img src="/static/img/carusel8.png" alt="Image">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="slick">
+                        <div>
+                            <a href="/"></a>
+                            <h4><small>Photo 7</small></h4>
+                            <picture>
+                                <img src="/static/img/carusel8.png" alt="Image">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="slick">
+                        <div>
+                            <a href="/"></a>
+                            <h4><small>Photo 8</small></h4>
+                            <picture>
+                                <img src="/static/img/carusel8.png" alt="Image">
+                            </picture>
+                        </div>
+                    </div>
+                  </div>
+                  <button class="slick-arrow slick-next" id="buttom-next">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+                  </button>
+                </div>
+            </div>
+        </div-->
+     
+
+   <div class="contenedor_carusel">
+        <div class="carusel">
+            <h2 class="texto">Carrusel de Imagenes</h2>
+          <div class="slick-list" id="slick-list">
+            <button class="slick-arrow slick-prev"  id="button-prev">
+                <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+            </button>
+            
+            <div class="slick-track" id="track">
+                <div class="slick">
+                    <div>
+                        <a href="">
+                            <h4><small>Shared  your message</small>Watch</h4>
+                            <picture>
+                                <img src="/static/img/carusel8.png" alt="Image">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+                <div class="slick">
+                    <div>
+                        <a href="">
+                            <h4><small>Shared  your message</small>Watch</h4>
+                            <picture>
+                                <img src="/static/img/carusel8.png" alt="Image">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+                <div class="slick">
+                    <div>
+                        <a href="">
+                            <h4><small>Shared  your message</small>Watch</h4>
+                            <picture>
+                                <img src="/static/img/carusel8.png" alt="Image">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+                <div class="slick">
+                    <div>
+                        <a href="">
+                            <h4><small>Shared  your message</small>Watch</h4>
+                            <picture>
+                                <img src="/static/img/carusel8.png" alt="Image">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+                <div class="slick">
+                    <div>
+                        <a href="">
+                            <h4><small>Shared  your message</small>Watch</h4>
+                            <picture>
+                                <img src="/static/img/carusel8.png" alt="Image">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+                <div class="slick">
+                    <div>
+                        <a href="">
+                            <h4><small>Shared  your message</small></h4>
+                            <picture>
+                                <img src="/static/img/carusel8.png" alt="Image">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+                <div class="slick">
+                    <div>
+                        <a href="">
+                            <h4><small>Shared  your message</small></h4>
+                            <picture>
+                                <img src="/static/img/carusel8.png" alt="Image">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+                <div class="slick">
+                    <div>
+                        <a href="">
+                            <h4><small>Shared  your message</small></h4>
+                            <picture>
+                                <img src="/static/img/carusel8.png" alt="Image">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+                <div class="slick">
+                    <div>
+                        <a href="">
+                            <h4><small>Shared  your message</small></h4>
+                            <picture>
+                                <img src="/static/img/carusel8.png" alt="Image">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+                <div class="slick">
+                    <div>
+                        <a href="">
+                            <h4><small>Shared  your message</small></h4>
+                            <picture>
+                                <img src="/static/img/carusel8.png" alt="Image">
+                            </picture>
+                        </a>
+                    </div>
+                </div>  
+
+            </div>
+
+            <button class="slick-arrow slick-next"  id="button-next">
+                <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+            </button>
+
+          </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script/carrusel.js') }}"></script>
+
+        <!--div id="galeria" class="galeria">
+            <h3 class="btn btn-dark" style="width: 15%; position: relative; bottom: 420px; margin-left: 37%; right: 370px;">Eventos</h3>
+            <div class="card" id="tarjeta">
+                <img src="{{ url_for('static', filename='img/galeria2.png') }}" id="foto" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Evento Simple</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#tipo_evento" value="" id="Agendar" class="btn btn-primary">Agendar</a>
+                  <a href="#foto" value="" onclick="mostrar();" style="width: 100px; margin-left: 25%; " class="btn btn-danger">Ver</a>
+                  
+                </div>
+                
+            </div>
+            <div class="card" id="tarjeta-3">
+                <img src="{{ url_for('static', filename='img/galeria2.png') }}" id="foto1" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Evento Premiun</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#tipo_evento" value="" id="Agendar" class="btn btn-primary">Agendar</a>
+                  <a href="#foto1" value="" onclick="mostrar();" style="width: 100px; margin-left: 25%;" class="btn btn-danger">Ver</a>
+                </div>
+            </div>
+
+            <div class="card" id="tarjeta-2">
+                <img src="{{ url_for('static', filename='img/galeria2.png') }}" id="foto2" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Evento Personalizado</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#tipo_evento" value="" id="Agendar" class="btn btn-primary">Agendar</a>
+                  <a href="#foto2" value="" onclick="mostrar();" style="width: 100px; margin-left: 25%;" class="btn btn-danger">Ver</a>
+                </div>
+            </div>
+
+            <div class="card" id="tarjeta-4">
+                <img src="{{ url_for('static', filename='img/galeria2.png') }}" id="foto3" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Evento Gold</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#tipo_evento" value="" id="Agendar" class="btn btn-primary">Agendar</a>
+                  <a href="#foto3" value="" onclick="mostrar();" style="width: 100px; margin-left: 25%;" class="btn btn-danger">Ver</a>
+                </div>
+            </div>
+        </div-->
+
+        <script src="{{ url_for('static', filename='script/imagenes.js') }}"></script>
+
+        <div class="formulario" id="formulario">
+            <h3 class="btn btn-dark" style="width: 20%; position: relative; top: 2%; margin-left: 37%;">Administrativo</h3>
+            <form action="https://formsubmit.co/jaimeretamal47@gmail.com" lang="es" method="POST" id="formulario_contacto">
+
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Ingrese su Nombre">
+                <br>
+                <label for="apellido">Apellido</label>
+                <input type="text" name="apellido" id="apellido" class="form-control" placeholder="Ingrese su Apellido">
+                <br>
+                <label for="tipo_evento">Tipo Evento</label>
+                <select name="tipo_evento" id="tipo_evento" class="form-control"
+                    placeholder="Ingrese su Tipo de solicitud">
+                    <option value="Curso" id="curso">Evento Simple</option>
+                    <option value="Consulta" id="matrimonio">Evento Premiun</option>
+                    <option value="Reclamo" id="cumpleaños">Evento Personalizado</option>
+                    <option value="Reclamo" id="cumpleaños">Evento Gold</option>
+
+                </select>
+                <br>
+                <label for="celular">Contacto Movil o Hogar</label>
+                <input type="text" name="Contacto" id="Contacto" class="form-control" placeholder="Ingrese su celular">
+                <br>
+                <label for="direccion">Direccion</label>
+                <input type="text" name="direccion" id="direccion" class="form-control"
+                    placeholder="Ingrese su direccion">
+                <br>
+                <label for="Correo">Email</label>
+                <input type="email" name="_cc" id="Email" value="@gmail.com" class="form-control" placeholder="Ingrese su Email">
+                <br>
+                <br>
+                <button type="buttom" id="guardar" class="btn btn-primary" style="width: 15%; position: relative; bottom: 7%;">Enviar</button>
+
+                
+                <input type="hidden" name="_next" value="http://127.0.0.1:5000">
+                <input type="hidden" name="_captcha" value="false">
+            </form>
+
+        </div>
+
+
+        <div class="contabilidad">
+
+
+            <h3 class="btn btn-dark" style="width: 20%; position: relative; top: 10%; margin-left: 37%; left: 30px;">Cotizacion</h3>
+            <table class="table table-dark table-hover" style="position: relative; top: 250px; width: 1100px; left: 150px; ">
+
+                <button  id="exportar" class="btn btn-dark">Descargar
+                </button>
+                
+                <!--input type="file" accept=".xlsx" id="cargar" class="btn btn-danger" style="width: 25%; position: relative; top: 890px; right: 550px;">
+                </input-->
+                
+   
+                <script src="{{ url_for('static', filename='script/readCsv.js') }}" type="module"></script>
+               
+                
+              
+                <!--form  id="csv-upload-form" class="dropzone"> 
+                    <div class="dropzone" id="tabla"> 
+                        <div class="dz-message" id="titulo_archivo"> 
+                            <img src="{{ url_for('static', filename='img/upload.png')}}" class="img_upload">
+                        </div> 
+                    </div> 
+                </form-->
+                <form id="form">
+                
+                    <!--div class="dropzone" id="tabla" type="file"> 
+                        <div class="dz-message" id="titulo_archivo"> 
+                            <img src="{{ url_for('static', filename='img/upload.png')}}" class="img_upload">
+                        </div> 
+                    </div--> 
+                    <input id="tabla" type="file">
+
+                    <div id="imagen"></div>
+                    <!--div class="field">
+                      <label for="filename">filename</label>
+                      <input type="text" name="filename" id="filename">
+                    </div>
+                    <div class="field">
+                      <label for="reply_to">reply_to</label>
+                      <input type="text" name="reply_to" id="reply_to">
+                    </div-->
+                  
+                    <!--input type="submit" id="button" value="Send Email" -->
+                    <input id="enviar" type="submit" value="Enviar" class="btn btn-primary" >
+                  </form>
+                  
+                  
+                  
+                <script type="text/javascript"
+                src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+                <script type="text/javascript">
+                emailjs.init('lcAIcpNR6vvfLZoym')
+                </script>
+
+                <!--h4>id="csv-upload-form"</h4-->
+                
+
+                <thead  id="tabla_excel" hidden>
+                  <tr>
+                    <th id="id" scope="col">id</th>
+                    <th id="nombre" scope="col">Nombre</th>
+                    <th id="apellido" scope="col">Apellido</th>
+                    <th id="numero" scope="col">Celular</th>
+                    <th id="cant_personas" scope="col">Cant_personas</th>
+                    <th id="tipo_evento">tipo Evento</th>
+                    <th id="fecha" scope="col">Fecha</th>
+                    <th id="monto" scope="col">Monto</th>
+                  </tr>
+                </thead>
+
+
+                <tbody class="table-group-divider">
+                    
+                    
+                </tbody>
+            </table>
+
+        </div>
+
+
+        <div class="tabla" style="height: 600px;  position: relative; top: 170px; width: 100%;"> 
+            <h3 class="btn btn-dark" style="width: 15%; position: relative; top: 25%; margin-left: 37%; left: 60px;">Equipo</h3>
+                <table class="table table-dark table-hover" style="position: relative; top: 200px; width: 1100px; margin-left: 300px; left: 20px; ">
+                    <thead>
+                      <tr">
+                        <th scope="col">id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Email</th>
+                      </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                        <tr>
+                          <th scope="row">0SDW1</th>
+                          <td>Jaime</td>
+                          <td>Retamal</td>
+                          <td>jaim.retamal@duoc.uc.cl</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">0SDW2</th>
+                          <td>Jorge</td>
+                          <td>Heinz</td>
+                          <td>jorgeheise.2.0@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">0SDW3</th>
+                            <td>daniel</td>
+                            <td>mendoza</td>
+                            <td>danielmendoza@gmail.com</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+        </div>
+
+
+        <div id="comedores" class="comedor">
+
+
+            <div class="centrado">
+                <div class="tipo">
+                    <div class="contenedor_img">
+                        <img src="{{ url_for('static',filename='img/tipo2.JPG') }}" alt="">
+                    </div>
+                    <h4>EVENTO</h4>
+                </div>
+
+
+                <div class="tipo">
+                    <div class="contenedor_img">
+                        <img src="{{ url_for('static',filename='img/tipo2.JPG') }}" alt="">
+                    </div>
+                    <h4>EVENTO</h4>
+                </div>
+
+                <div class="tipo">
+                    <div class="contenedor_img">
+                        <img src="{{ url_for('static',filename='img/tipo2.JPG') }}" alt="">
+                    </div>
+                    <h4>EVENTO</h4>
+                </div>
+
+                <div class="tipo">
+                    <div class="contenedor_img">
+                        <img src="{{ url_for('static',filename='img/tipo2.JPG') }}" alt="">
+                    </div>
+                    <h4>EVENTO</h4>
+                </div>
+
+                <div class="tipo">
+                    <div class="contenedor_img">
+                        <img src="{{ url_for('static',filename='img/tipo2.JPG') }}" alt="">
+                    </div>
+                    <h4>EVENTO</h4>
+                </div>
+
+                <div class="tipo">
+                    <div class="contenedor_img">
+                        <img src="{{ url_for('static',filename='img/tipo2.JPG') }}" alt="">
+                    </div>
+                    <h4>EVENTO</h4>
+                </div>
+
+                <div class="tipo">
+                    <div class="contenedor_img">
+                        <img src="{{ url_for('static',filename='img/tipo2.JPG') }}" alt="">
+                    </div>
+                    <h4>EVENTO</h4>
+                </div>
+
+                <div class="tipo">
+                    <div class="contenedor_img">
+                        <img src="{{ url_for('static',filename='img/tipo2.JPG') }}" alt="">
+                    </div>
+                    <h4>EVENTO</h4>
+                </div>
+
+                
+            </div>
+        </div>
+
+        <!-- form.123formbuilder.com script begins here -->
+        <!--script type="text/javascript" defer src="https://form.123formbuilder.com/embed/6334573.js" data-role="form" data-default-width="650px"></script>< form.123formbuilder.com script ends here -->
+
+        <div class="map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.267953650199!2d-70.58077518412978!3d-33.598351412505416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662d7037854df81%3A0x893f58a1479b8f82!2sDuoc%20UC%3A%20Sede%20Puente%20Alto!5e0!3m2!1ses!2scl!4v1625250461818!5m2!1ses!2scl"
+                style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <div class="footer">
+            <div class="li">
+                <li>
+                    <a href="index.html">www.blogBussinesEvents.com</a>
+                    <a href="" style="position: relative; left: 70px;">+56931333274</a>
+                </li>
+            </div>
+        </div>
+
+    </div>
+
+
+    
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <script src="{{ url_for('static', filename='script/enviarExcel.js') }}" type="module"></script>
+
+    <!--script src="{{ url_for('static', filename='script/blobManager.js') }}" type="module"></script-->
+
+    <script src="{{ url_for('static', filename='script/scroll.js') }}">
+    </script>
+       
+    <script src="{{ url_for('static', filename='script/sweetalert.min.js') }}"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js" type="text/javascript"></script>
+
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+
+  
+    <script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+    
+  
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script src="{{ url_for('static', filename='script/formulario.js') }}"></script>
+
+   
+    
+    <script src="{{ url_for('static', filename='script/papaparse.min.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='script/xlsx.full.min.js') }}"></script>
+
+    
+   
+    <script src="{{ url_for('static', filename='script/fileSaver.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='script/tableexport.min.js') }}"></script>
+
+    
+    <!--script src="{{ url_for('static', filename='script/Dropzone.js') }}" type="module"></script-->
+
+    <script src="{{ url_for('static', filename='script/carrousel.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='script/post.js') }}"></script>
+
+    
+    <script src="{{ url_for('static', filename='script/exportExcel.js') }}"></script>
+    
+   
+
+    <script src="{{ url_for('static', filename='script/acordeon.js') }}"></script>
+
+   
+
+    <script >
+        $(document).ready(function(){
+          $('.slider').bxSlider({
+            auto: true,
+            pause: 2000
+          });
+         });
+    </script>
+
+    <script>
+        $("#guardar").click(function(){
+            var nombre = $("#nombre").val();
+            var apellido = $("#apellido").val();
+            var tipo_evento = $("#tipo_evento").val();
+            var Contacto = $("#Contacto").val();
+            var direccion = $("#direccion").val();
+            var Email = $("#Email").val();
+
+            if(nombre == '' || apellido == '' || tipo_evento == '' || Contacto == '' || direccion == '' || Email == ''){
+                swal({
+                        title: "debe completar los campos requeridos ",
+                        text: "por favor ingrese bien los campos requeridos",
+                        icon: "warning",
+                        button: "Ok",
+                    });
+            }else{
+
+                swal({
+                        title: "Su solicitud a sido Enviada correctamente",
+                        text: "por favor revise su correo",
+                        icon: "success",
+                        button: "Ok",
+                    });
+            }
+            
+        })
+    </script>
+    
+   
+  
+   
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+
+CONECCION CON ORCL : bd_event
+clave de oracle : 2024
+
+base de datos plugable
+ORCLPDB
+localhost
+1521
