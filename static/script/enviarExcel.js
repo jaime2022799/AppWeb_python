@@ -87,8 +87,8 @@ enviar_excel.addEventListener('click',  function(event) {
     Email.send({
       SecureToken : "6835a161-ebee-40b3-adc3-5f16e949ad43",
       To : 'jaimeretamal47@gmail.com, mendozajaiser54@gmail.com',
-      From : "mendozajaiser54@gmail.com",
-      Subject : "Cotizacion 2023",
+      From : "jaimeretamal47@gmail.com",
+      Subject : "Cotizacion 2024",
       Body : "Estimado(a) se a enviado una solicitud al departamento de cotizadores,   se comunicaran con usted mediante los datos solicitados",
       
       

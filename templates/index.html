@@ -501,55 +501,12 @@
 
     <script src="{{ url_for('static', filename='script/carrusel.js') }}"></script>
 
-        <!--div id="galeria" class="galeria">
-            <h3 class="btn btn-dark" style="width: 15%; position: relative; bottom: 420px; margin-left: 37%; right: 370px;">Eventos</h3>
-            <div class="card" id="tarjeta">
-                <img src="{{ url_for('static', filename='img/galeria2.png') }}" id="foto" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Evento Simple</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#tipo_evento" value="" id="Agendar" class="btn btn-primary">Agendar</a>
-                  <a href="#foto" value="" onclick="mostrar();" style="width: 100px; margin-left: 25%; " class="btn btn-danger">Ver</a>
-                  
-                </div>
-                
-            </div>
-            <div class="card" id="tarjeta-3">
-                <img src="{{ url_for('static', filename='img/galeria2.png') }}" id="foto1" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Evento Premiun</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#tipo_evento" value="" id="Agendar" class="btn btn-primary">Agendar</a>
-                  <a href="#foto1" value="" onclick="mostrar();" style="width: 100px; margin-left: 25%;" class="btn btn-danger">Ver</a>
-                </div>
-            </div>
-
-            <div class="card" id="tarjeta-2">
-                <img src="{{ url_for('static', filename='img/galeria2.png') }}" id="foto2" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Evento Personalizado</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#tipo_evento" value="" id="Agendar" class="btn btn-primary">Agendar</a>
-                  <a href="#foto2" value="" onclick="mostrar();" style="width: 100px; margin-left: 25%;" class="btn btn-danger">Ver</a>
-                </div>
-            </div>
-
-            <div class="card" id="tarjeta-4">
-                <img src="{{ url_for('static', filename='img/galeria2.png') }}" id="foto3" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Evento Gold</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#tipo_evento" value="" id="Agendar" class="btn btn-primary">Agendar</a>
-                  <a href="#foto3" value="" onclick="mostrar();" style="width: 100px; margin-left: 25%;" class="btn btn-danger">Ver</a>
-                </div>
-            </div>
-        </div-->
 
         <script src="{{ url_for('static', filename='script/imagenes.js') }}"></script>
 
         <div class="formulario" id="formulario">
             <h3 class="btn btn-dark" style="width: 20%; position: relative; top: 2%; margin-left: 37%;">Administrativo</h3>
-            <form action="https://formsubmit.co/jaimeretamal47@gmail.com" lang="es" method="POST" id="formulario_contacto">
+            <form  method="POST" action="index"  lang="es" id="formulario_contacto">
 
                 <label for="nombre">Nombre</label>
                 <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Ingrese su Nombre">
@@ -558,24 +515,25 @@
                 <input type="text" name="apellido" id="apellido" class="form-control" placeholder="Ingrese su Apellido">
                 <br>
                 <label for="tipo_evento">Tipo Evento</label>
-                <select name="tipo_evento" id="tipo_evento" class="form-control"
+                <input type="text" name="tipo_evento" id="tipo_evento" class="form-control" placeholder="Ingrese su Apellido">
+                <br>
+                <!--select name="tipo_evento" id="tipo_evento" class="form-control"
                     placeholder="Ingrese su Tipo de solicitud">
                     <option value="Curso" id="curso">Evento Simple</option>
                     <option value="Consulta" id="matrimonio">Evento Premiun</option>
                     <option value="Reclamo" id="cumpleaños">Evento Personalizado</option>
                     <option value="Reclamo" id="cumpleaños">Evento Gold</option>
 
-                </select>
-                <br>
+                </select-->
                 <label for="celular">Contacto Movil o Hogar</label>
-                <input type="text" name="Contacto" id="Contacto" class="form-control" placeholder="Ingrese su celular">
+                <input type="text" name="contacto" id="Contacto" class="form-control" placeholder="Ingrese su celular">
                 <br>
                 <label for="direccion">Direccion</label>
                 <input type="text" name="direccion" id="direccion" class="form-control"
                     placeholder="Ingrese su direccion">
                 <br>
                 <label for="Correo">Email</label>
-                <input type="email" name="_cc" id="Email" value="@gmail.com" class="form-control" placeholder="Ingrese su Email">
+                <input type="email" name="email" id="Email" value="@gmail.com" class="form-control" placeholder="Ingrese su Email">
                 <br>
                 <br>
                 <button type="buttom" id="guardar" class="btn btn-primary" style="width: 15%; position: relative; bottom: 7%;">Enviar</button>
@@ -597,43 +555,18 @@
                 <button  id="exportar" class="btn btn-dark">Descargar
                 </button>
                 
-                <!--input type="file" accept=".xlsx" id="cargar" class="btn btn-danger" style="width: 25%; position: relative; top: 890px; right: 550px;">
-                </input-->
-                
    
                 <script src="{{ url_for('static', filename='script/readCsv.js') }}" type="module"></script>
                
                 
-              
-                <!--form  id="csv-upload-form" class="dropzone"> 
-                    <div class="dropzone" id="tabla"> 
-                        <div class="dz-message" id="titulo_archivo"> 
-                            <img src="{{ url_for('static', filename='img/upload.png')}}" class="img_upload">
-                        </div> 
-                    </div> 
-                </form-->
-                <form id="form">
+                <form  method="POST" action="upload"  id="form" target="_blank" enctype="multipart/form-data">
                 
-                    <!--div class="dropzone" id="tabla" type="file"> 
-                        <div class="dz-message" id="titulo_archivo"> 
-                            <img src="{{ url_for('static', filename='img/upload.png')}}" class="img_upload">
-                        </div> 
-                    </div--> 
-                    <input id="tabla" type="file">
+                    <input id="tabla" name="archivo" type="file">
 
                     <div id="imagen"></div>
-                    <!--div class="field">
-                      <label for="filename">filename</label>
-                      <input type="text" name="filename" id="filename">
-                    </div>
-                    <div class="field">
-                      <label for="reply_to">reply_to</label>
-                      <input type="text" name="reply_to" id="reply_to">
-                    </div-->
-                  
-                    <!--input type="submit" id="button" value="Send Email" -->
-                    <input id="enviar" type="submit" value="Enviar" class="btn btn-primary" >
-                  </form>
+                    
+                    <input id="enviar" name="enviar" type="submit" value="Enviar" class="btn btn-primary" >
+                </form>
                   
                   
                   

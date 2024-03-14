@@ -1,0 +1,469 @@
+python 
+
+BFILENAME('DIR_ARCHIVO_COTIZADOR',)
+
+#@app.route('/login.html', methods=['GET'])
+#def data():
+#    cur = connection.cursor()
+#    cur.execute('select * from signup')
+#    rv = cur.fetchall()
+    #for row in rv:
+    #    print(rv)
+#    cur.close
+
+#    return redirect(url_for('post_data'))
+
+ <!--div id="galeria" class="galeria">
+            <h3 class="btn btn-dark" style="width: 15%; position: relative; bottom: 420px; margin-left: 37%; right: 370px;">Eventos</h3>
+            <div class="card" id="tarjeta">
+                <img src="{{ url_for('static', filename='img/galeria2.png') }}" id="foto" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Evento Simple</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#tipo_evento" value="" id="Agendar" class="btn btn-primary">Agendar</a>
+                  <a href="#foto" value="" onclick="mostrar();" style="width: 100px; margin-left: 25%; " class="btn btn-danger">Ver</a>
+                  
+                </div>
+                
+            </div>
+            <div class="card" id="tarjeta-3">
+                <img src="{{ url_for('static', filename='img/galeria2.png') }}" id="foto1" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Evento Premiun</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#tipo_evento" value="" id="Agendar" class="btn btn-primary">Agendar</a>
+                  <a href="#foto1" value="" onclick="mostrar();" style="width: 100px; margin-left: 25%;" class="btn btn-danger">Ver</a>
+                </div>
+            </div>
+
+            <div class="card" id="tarjeta-2">
+                <img src="{{ url_for('static', filename='img/galeria2.png') }}" id="foto2" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Evento Personalizado</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#tipo_evento" value="" id="Agendar" class="btn btn-primary">Agendar</a>
+                  <a href="#foto2" value="" onclick="mostrar();" style="width: 100px; margin-left: 25%;" class="btn btn-danger">Ver</a>
+                </div>
+            </div>
+
+            <div class="card" id="tarjeta-4">
+                <img src="{{ url_for('static', filename='img/galeria2.png') }}" id="foto3" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Evento Gold</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#tipo_evento" value="" id="Agendar" class="btn btn-primary">Agendar</a>
+                  <a href="#foto3" value="" onclick="mostrar();" style="width: 100px; margin-left: 25%;" class="btn btn-danger">Ver</a>
+                </div>
+            </div>
+        </div-->
+
+#definimos la ruta de login para los parametros de la creacion de la cuenta signup
+#@app.route('/login.html', methods=['POST'])
+#def signup_registro():
+
+#    fecha = date.today()
+ #   fechaHora = datetime.now()
+ #   time = fechaHora.strftime("%H:%M:%S")
+
+
+     # Extract the employee data from the request
+ #   req = request.get_json
+ #   nombre = req['nombre']
+#    email = req['email']
+#    password_create = req['password_create']
+  #  password_confirm = req['password_confirm']
+ #   apellido = req['apellido']
+
+    # Check if the employee with the same ID already exists
+    
+
+    # Insert the employee into the database
+ #   cursor.execute("INSERT INTO SIGNUP (email, clave_nueva, clave, fecha , nombre , apellido , hora) VALUES (:email, :password_create, :password_confirm,:fecha, :nombre,:apellido,:time)",
+ ##               {'email': email, 'password_create': password_create, 'password_confirm': password_confirm, 'fecha':fecha, 'nombre':nombre, 'apellido':apellido, 'time':time})
+ #   connection.commit()
+    #llamamos al request del metodo post 
+  
+ #   return redirect(url_for('data'))
+
+
+html
+  <button class="button_login" id="form-open">Login</button>
+
+.form_container {
+    position: absolute;
+    max-width: 320px;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    z-index: 101;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease-out;
+   
+}
+
+css
+.button_login {
+    padding: 6px 24px;
+    border: 2px solid #fff;
+    background: transparent;
+    border-radius: 6px;
+    margin-left: 250px;
+    cursor: pointer;
+
+}
+.button_login:active {
+    transform: scale(0.98);
+}
+
+html
+<!--div class="field">
+                      <label for="filename">filename</label>
+                      <input type="text" name="filename" id="filename">
+                    </div>
+                    <div class="field">
+                      <label for="reply_to">reply_to</label>
+                      <input type="text" name="reply_to" id="reply_to">
+                    </div-->
+
+<!--form  id="csv-upload-form" class="dropzone"> 
+                    <div class="dropzone" id="tabla"> 
+                        <div class="dz-message" id="titulo_archivo"> 
+                            <img src="{{ url_for('static', filename='img/upload.png')}}" class="img_upload">
+                        </div> 
+                    </div> 
+                </form-->
+
+
+ <!--div class="dropzone" id="tabla" type="file"> 
+                        <div class="dz-message" id="titulo_archivo"> 
+                            <img src="{{ url_for('static', filename='img/upload.png')}}" class="img_upload">
+                        </div> 
+                    </div--> 
+
+
+
+/*
+import {blobToBase64} from './blobManager.js';
+
+const excel_send = document.getElementById('enviar');
+
+const input = document.getElementById('tabla');
+
+var swalbuton = document.getElementsByClassName('swal-button swal-button--confirm');
+
+excel_send.addEventListener('click', async (e) =>{
+   e.preventDefault();
+   
+   //inicializacion base64 de archivo xlsx
+  //  const myBlob = input.files[0];
+  const byBlob = input.files[0];
+   const byB64 = await blobToBase64(byBlob)
+   console.log(byB64)
+   //enviar email cliente con archivo adjuntado
+   Email.send({
+      SecureToken : "82355aea-cf83-4bc2-8d5a-449866654c56",
+      To : 'jaimeretamal47@gmail.com',
+      From : "jaimeretamal47@gmail.com",
+      Subject : "Cotizacion EventsBussynes",
+      Body : "Estimado(a) esto es una validacion de redireccionamiento de archivo",
+
+      
+      Attachments : [
+         {
+            name : "CotizacionJaime.xlsx",
+            data :  byB64
+            
+         }]
+      
+   }).then(
+
+      message => swal('Genial...','se a enviado una notificacion de su cotizacion a la contadora correspondiente.','success')
+      
+   );
+   
+ 
+   
+  e.preventDefault();
+});
+
+*/
+
+
+   /*
+   emailjs.sendForm(serviceID, templateID, this, blobToBase64)
+    .then(() => {
+      
+      enviar_excel.value = 'Enviar';
+      alert('Se a enviado el archivo!');
+    }, (err) => {
+      enviar_excel.value = 'Enviar';
+      alert(JSON.stringify(err));
+    });
+   */
+
+   /*
+   const blobToBase64 = (file) => {
+      return new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.readAsDataURL(file);
+          reader.onloadend = () => {
+              resolve(reader.result.split(',')[1]);
+          };
+      });
+  };
+  */
+ 
+  //enviar email cliente con archivo adjuntado
+  /*
+  Email.send({
+     SecureToken : "410aa0a-7fb9-4f89-9bfe-4c6469698d71",
+     To : 'jaimeretamal47@gmail.com',
+     From : "jaimeretamal47@gmail.com",
+     Subject : "Cotizacion EventsBussynes",
+     Body : "Estimado(a) esto es una validacion de redireccionamiento de archivo",
+
+     
+     Attachments : [
+        {
+           name : "CotizacionJaime.xlsx",
+           data :  byB64
+           
+        }]
+     
+  }).then(
+
+     message => swal('Genial...','se a enviado una notificacion de su cotizacion a la contadora correspondiente.','success')
+     
+  );
+  */
+/*
+document.getElementById('form')
+.addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.value = 'enviando...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_lmdided';
+
+
+#INSERTAR_REGISTRO_SIGNUP = '''
+#INSERT INTO SIGNUP (ID_SIGNUP,EMAIL,CLAVE_NUEVA,CLAVE,NOMBRE,APELLIDO) VALUES (8,'RETAMAL2024@GMAIL.COM','RETAMAL','RETAMAL','JAIME','MENDOZA')
+#'''
+
+ email_r = cursor.var(str)
+    clave_nueva_r = cursor.var(str)
+    clave_r = cursor.var(str)
+    nombre_r = cursor.var(str)
+    apellido_r = cursor.var(str)
+
+  #delete_tabla = '''
+    #DELETE FROM SIGNUP WHERE ID_SIGNUP IN (104,111,112,113,114)
+    #'''
+    
+   # cursor.execute(delete_tabla)
+    #query = 'select * from signup'
+    
+
+    #INSERT INTO SIGNUP (ID_SIGNUP,EMAIL,CLAVE_NUEVA,CLAVE,NOMBRE,APELLIDO) VALUES (8,'RETAMAL2024@GMAIL.COM','RETAMAL','RETAMAL','JAIME','MENDOZA')
+        #call_sp_signup = '''
+        #INSERT INTO SIGNUP (EMAIL,CLAVE_NUEVA,CLAVE,FECHA,NOMBRE,APELLIDO) VALUES (:email,:clave_nueva,:clave,:fecha,:nombre,:apellido)
+        #'''
+
+
+@app.route('/login.html', methods=['GET'])
+def get_id_signup():
+    cur = connection.cursor()
+    cur.execute("SELECT * FROM SIGNUP")
+    registro = cur.fetchall()
+
+    registro_lista = []
+    for registros in registro:
+        registro_lista.append({
+            'id_signup': registros[0],
+            'email': registros[1],
+            'clave_nueva': registros[2],
+            'clave': registros[3],
+            'fecha': registros[4],
+            'nombre': registros[5],
+            'apellido': registros[6],
+            'time': registros[7]
+        })
+        print(0)
+    #if registro is None:
+     #   return jsonify({'message': 'registro no encontrado'}), 404
+
+
+    return jsonify(registro_lista)
+
+call INSERTAR_REGISTRO_LOGIN (8,'nicolasmendoza@gmail.com','mendoza',15)
+
+call REGISTRO_CON_VALIDACION_LOGIN (id_login,email_login,clave_login,id_signup,fecha)'
+
+#cursor.execute(INSERTAR_REGISTRO_SIGNUP)
+#connection.commit()
+#def get_usuario_id(nombre_id):
+ #   with connection.cursor() as cursor:
+  #      rows_count = cursor.execute(get_usuario_id(nombre_id))
+   #     if rows_count == 0:
+    #        return jsonify('no se encuentra usuario '+ nombre_id),404
+     #   else:
+      #      return jsonify(cursor.fetchone()), 200
+
+
+#insertar_usuario= '''
+#INSERT INTO SIGNUP (ID_SIGNUP,EMAIL,CLAVE_NUEVA,CLAVE,NOMBRE,APELLIDO) VALUES (10,'ISAK@GMAIL.COM','ISAK','DOKU','ISAK','DOKU')
+#       '''
+
+# cursor.execute("""
+    #        insert into signup (email,password_create,password_confirm,fecha,nombre,apellido)
+     #       values (:email_r,:clave_nueva_r,:clave_r,:fecha,:nombre_r,:apellido_r)
+     #       returning  email into :email_r,password_create into :clave_nueva_r 
+     #       password_confirm into clave_r, fecha into :fecha , nombre into :nombre_r , apellido into apellido_r""", 
+     #      [email, email_r,password_create,clave_nueva_r,password_confirm,clave_r,fecha,nombre,nombre_r,apellido,apellido_r])
+   # return 'Inserted {} with email {}'.format(email, email_r.getvalue()[0]), 'Inserted {} with password_create {}'.format(password_create, clave_nueva_r.getvalue()[0]),'Inserted {} with password_confirm {}'.format(clave_r.getvalue()[0]),'Inserted {} with fecha {}'.format(fecha.getvalue()[0]),'Inserted {} with nombre {}'.format(nombre.getvalue()[0]),'Inserted {} with apellido {}'.format(apellido.getvalue()[0])
+        
+        #cursor.execute(call_sp_signup,[email_r,password_create,password_confirm,fecha,nombre,apellido])
+        #return render_template('/index.html')
+        #return redirect(url_for('/home'))
+    #else:
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+
+      btn.value = 'Enviar';
+      alert('Se a enviado el archivo!');
+    }, (err) => {
+      btn.value = 'Enviar';
+      alert(JSON.stringify(err));
+    });
+    
+});
+*/
+
+/*"data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,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"*/
+
+/*enviar_excel.addEventListener('submit', (e) =>{
+   e.preventDefault();
+   
+   //inicializacion base64 de archivo xlsx
+ // console.log(fileUpload.innerText);
+ // console.log("convertiendo base 64 ....");
+  
+  //const myBlob = fileUpload.files[0];
+  //const myB64 = await blobToBase64(myBlob);
+  //console.log(myB64);
+  
+   //enviar email cliente con archivo adjuntado
+   Email.send({
+      SecureToken : "7542a-a621-44a3-8521-0807c735763",
+      To : 'jaimeretamal47@gmail.com',
+      From : "jaimeretamal47@gmail.com",
+      Subject : "EventosDeNegocio",
+      Body : "estimado(a) esperando que se encuentre bien , le adjuntamos la cotizacion correspondiente a su solicitud."
+  }).then(
+    message => alert(message)
+  );
+   
+ 
+   
+  //e.preventDefault();
+  
+});
+*/
+//document.getElementById('form').
+
+header.down{
+  background: #22222b;
+  padding: 25px 80px;
+  position: sticky;
+  top: 0;
+ }
+
+/*tabla_file.addEventListener("change", e => {
+      const file = tabla_file.files[0];
+
+      reader.addEventListener("load", () => {
+         console.log(reader.result);
+      });
+
+      reader.readAsDataURL(file);
+   });*/
+   
+
+  // reader.readAsDataURL(cargarimagen);
+  // reader.readAsDataURL(tabla_file.files[0]);
+   
+  // reader.readAsText(tabla_file.files[0])
+
+<a href="https://wa.me/56931333274"><img src="{{url_for('static', filename='img/whatsapp-fill.png')}}" style="width: 50px; height: 50px; margin-left: 1700px; position: relative; "></a>
+<a href="https://facebook.com"><img src="{{url_for('static', filename='img/facebook-fill.png')}}" style="width: 50px; height: 50px; margin-left: 1700px; position: relative; "></a>
+<a href="https://twitter.com/?lang=es"><img src="{{url_for('static', filename='img/twitter-fill (1).png')}} " style="width: 50px; height: 50px; margin-left: 1700px; position: relative;"></a>
+<a href="https://instagram.com"><img src="{{url_for('static', filename='img/instagram-fill.png')}} " style="width: 50px; height: 50px; margin-left: 1700px; position: relative;"></a>
+
+
+
+
+
+<div class="slider">
+                
+            <div>
+                <img src="{{url_for('static', filename='img/slider2.jpg')}}"  class="imagen1" alt="">
+                
+            </div>
+
+            <div>
+                <img src="{{url_for('static', filename='img/slider2.jpg')}}"  class="imagen1" alt="">
+                
+             </div>
+
+            <div>
+                <img src="{{url_for('static', filename='img/slider2.jpg')}}"   class="imagen" alt="">
+                
+            </div>
+        
+        </div>
+
+
+
+
+
+<div class="contenido2">
+                <div class="estructura">
+                </div>
+            </div>
+
+            <div class="contenido3">
+                <div class="estructura2">
+                </div>
+            </div>
+
+            <div class="contenido4">
+                <div class="estructura3">
+                </div>
+            </div>
+            
+            <div class="contenido5">
+                <div class="estructura4">
+                </div>
+            </div>
+https://formsubmit.co/jaimeretamal47@gmail.com
+
+/*export const hello = () =>{
+    return "hello";
+}
+*/
+
+//import {hello} from  './readCsv.js';
+//import {excel_file} from './readCsv.js';
+
+
+
+
+//archivo_excel = excel_file.reader(data);

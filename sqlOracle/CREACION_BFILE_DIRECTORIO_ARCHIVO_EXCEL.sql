@@ -1,0 +1,37 @@
+SELECT * FROM ARCHIVO_BFILE_COTIZADOR;
+
+INSERT INTO archivo_bfile_cotizador VALUES ('', '', bfilename('DIR_ARCHIVO_RUTA_8',NOMBRE_BFILE));
+  
+CREATE DIRECTORY RUTA_ARCHIVO_COTIZACION AS 'C:\Users';
+
+INSERT INTO ARCHIVO_BFILE_COTIZADOR (id_cotizador, nombre, archivo_foto)
+VALUES (27, 'vision_prueba_2', BFILENAME('RUTA_ARCHIVO_COTIZACION', 'vision.png'));
+
+
+------------------------------------------------
+DELETE FROM archivo_bfile_cotizador;
+
+ALTER TABLE archivo_bfile_cotizador
+DROP COLUMN ID_COTIZADOR;
+
+ALTER TABLE archivo_bfile_cotizador
+add ID_COTIZADOR NUMERIC (30) NOT NULL;
+
+ALTER TABLE archivo_bfile_cotizador ADD (
+CONSTRAINT PK_ID_COTIZADOR PRIMARY KEY (ID_COTIZADOR));
+
+CREATE SEQUENCE SEQ_ID_COTIZADOR START WITH 1;
+
+CREATE OR REPLACE TRIGGER TRIG_ID_COTIZADOR
+    BEFORE INSERT ON archivo_bfile_cotizador
+    FOR EACH ROW
+BEGIN
+  SELECT SEQ_ID_COTIZADOR.NEXTVAL
+  INTO   :new.ID_COTIZADOR
+  FROM   dual;
+END;
+
+INSERT INTO ARCHIVO_BFILE_COTIZADOR (nombre, archivo_foto)
+VALUES ('orcl_conexion_oracle', BFILENAME('RUTA_ARCHIVO_COTIZACION', 'coneccionORCL.txt'));
+
+SELECT * FROM ARCHIVO_BFILE_COTIZADOR;
