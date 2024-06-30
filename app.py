@@ -33,6 +33,23 @@ def home():
     return render_template('/index.html')
 
 
+@app.route('/portalPago.html')
+def portalPago():
+    return render_template('/portalPago.html')
+
+@app.route('/dashboard.html')
+def dashboard():
+    return render_template('/dashboard.html')
+
+@app.route('/modulo_cotizador.html')
+def modulo_cotizador():
+    return render_template('/modulo_cotizador.html')
+
+@app.route('/crud_cotizador.html')
+def crud_cotizador():
+    return render_template('/crud_cotizador.html')
+
+
 cursor = connection.cursor()
 
 
@@ -72,17 +89,17 @@ def post_data():
 
 
     
-cur = connection.cursor()
-cur.execute("SELECT * FROM SIGNUP WHERE HORA IS NOT NULL")
-for id_signup , email, clave_nueva , clave,fecha,nombre,apellido,hora in cur:
-    print("Campo: ", id_signup)
-    print("Campo: ", email)
-    print("Campo: ", clave_nueva)
-    print("Campo: ", clave)
-    print("Campo: ", fecha)
-    print("Campo: ", nombre)
-    print("Campo: ", apellido)
-    print("Campo: ", hora)
+#cur = connection.cursor()
+#cur.execute("SELECT * FROM SIGNUP WHERE HORA IS NOT NULL")
+#for id_signup , email, clave_nueva , clave,fecha,nombre,apellido,hora in cur:
+#    print("Campo: ", id_signup)
+#    print("Campo: ", email)
+#    print("Campo: ", clave_nueva)
+#    print("Campo: ", clave)
+#    print("Campo: ", fecha)
+#    print("Campo: ", nombre)
+#    print("Campo: ", apellido)
+#    print("Campo: ", hora)
 
 
 #definimos la ruta de index para el registro de la cuenta creada pero en el login
@@ -118,7 +135,7 @@ def login_registro():
     
 
 
-@app.route('/index', methods=['POST'])
+@app.route('/formulario', methods=['POST'])
 def pag_formulario_administrativo():
      #VARIABLES
     fecha = date.today()
@@ -136,7 +153,7 @@ def pag_formulario_administrativo():
         email = request.form['email']
 
         execute = """
-        INSERT INTO FORMULARIO_ADMINISTRATIVO (nombre,apellido,tipo_evento,contacto,direccion,email,fecha,hora) 
+        INSERT INTO formulario_administrativo (nombre,apellido,tipo_evento,contacto,direccion,email,fecha,hora) 
         VALUES (:nombre,:apellido,:tipo_evento,:contacto,:direccion,:email,:fecha,:time)
         """
 
@@ -148,7 +165,7 @@ def pag_formulario_administrativo():
     else:
         return "404  ERROR REQUEST", 400
      
-    return render_template('/login.html') , 200
+    return render_template('/index.html') , 200
 
 
 

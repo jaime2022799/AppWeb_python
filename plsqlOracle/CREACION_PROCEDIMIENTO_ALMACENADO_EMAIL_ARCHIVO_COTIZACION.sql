@@ -1,0 +1,50 @@
+create or replace NONEDITIONABLE PROCEDURE REGISTRO_INSERT_ARCHIVO_COTIZACION_ENVIO_EMAIL (
+
+NOMBRE_C archivo_bfile_cotizador.nombre%TYPE,
+FECHA_C archivo_bfile_cotizador.fecha%TYPE,
+HORA_C archivo_bfile_cotizador.hora%TYPE,
+ARCHIVO_C varchar2)
+--archivo_bfile_cotizador.archivo%TYPE)
+AS
+
+
+--VARIABLE EMAIL
+from_user varchar2(50):='user_boss';
+from_sndr varchar2(50):='jaimeretamal47@gmail.com';
+rcpt_to varchar2(2000):='jaimeretamal47@gmail.com';
+msubj varchar2(80):='PRUEBA DE PLSQL EMAIL';
+mmsg varchar2(400):= 'ESTA ES UNA PRUEBA DE PLSQL EMAIL...';
+ret_msg varchar2(400);
+
+
+ CURSOR C_INSERTAR_ARCHIVO_COTIZADOR
+ IS SELECT * FROM ARCHIVO_BFILE_COTIZADOR
+ WHERE NOMBRE=NOMBRE_C;
+
+ CUR_INSERT_ARCHIVO_COTIZADOR  C_INSERTAR_ARCHIVO_COTIZADOR%ROWTYPE;
+
+ --VARIABLE DIRECTORIO
+ --ARCHIVO_C VARCHAR2(100) := 'cotizacion1306.txt';
+ --RUTA_ARCHIVO_COTIZACION VARCHAR2(100) := 'C:\Users';
+
+BEGIN
+
+ IF ARCHIVO_C IS NOT NULL  THEN 
+
+ OPEN C_INSERTAR_ARCHIVO_COTIZADOR;
+ FETCH C_INSERTAR_ARCHIVO_COTIZADOR INTO CUR_INSERT_ARCHIVO_COTIZADOR;
+ INSERT INTO ARCHIVO_BFILE_COTIZADOR
+ VALUES (NOMBRE_C,FECHA_C,HORA_C,BFILENAME('RUTA_ARCHIVO_COTIZACION',archivo_c));
+
+ CLOSE C_INSERTAR_ARCHIVO_COTIZADOR;
+
+ ret_msg := USER_BOSS.send_email(from_user, from_sndr, rcpt_to, msubj, mmsg, 'COTIZACION.TXT');
+
+ COMMIT;
+
+ END IF;
+END;
+
+SELECT * FROM archivo_bfile_cotizador;
+
+--execute REGISTRO_INSERT_ARCHIVO_COTIZACION_ENVIO_EMAIL('Cotizacion2_13/06/2024','13/06/2024','17:40','cotizacion1306.txt');

@@ -65,9 +65,9 @@
                   </button>
                   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                      <a id="link" class="navbar-brand" aria-current="page" href="#">Inicio</a>
+                      <a id="link" class="navbar-brand" aria-current="page" href="http://localhost:5000/dashboard.html">Dashboard</a>
                       <a id="link" class="navbar-brand" href="#">Nosotros</a>
-                      <a id="link" class="navbar-brand" href="#">Eventos</a>
+                      <a id="link" class="navbar-brand" href="http://localhost:5000/portalPago.html">PortalFactura</a>
                       <a id="link" class="navbar-brand" href="#">Contacto</a>
                     </div>
                   </div>
@@ -506,7 +506,12 @@
 
         <div class="formulario" id="formulario">
             <h3 class="btn btn-dark" style="width: 20%; position: relative; top: 2%; margin-left: 37%;">Administrativo</h3>
-            <form  method="POST" action="index"  lang="es" id="formulario_contacto">
+            
+            
+            
+            <form  method="POST" action="formulario"  lang="es" class="form-contact">
+
+                <script src="{{ url_for('static', filename='script/enviarFormulario.js') }}" type="module"></script>
 
                 <label for="nombre">Nombre</label>
                 <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Ingrese su Nombre">
@@ -535,13 +540,15 @@
                 <label for="Correo">Email</label>
                 <input type="email" name="email" id="Email" value="@gmail.com" class="form-control" placeholder="Ingrese su Email">
                 <br>
-                <br>
-                <button type="buttom" id="guardar" class="btn btn-primary" style="width: 15%; position: relative; bottom: 7%;">Enviar</button>
-
+                <!--button type="submit" id="enviarFormulario" class="btn btn-primary" style="width: 15%; position: relative; bottom: 7%;">Enviar</button-->
+                <input id="submit" type="submit" class="btn btn-primary" style="width: 15%; position: relative; bottom: 7%;">
                 
                 <input type="hidden" name="_next" value="http://127.0.0.1:5000">
                 <input type="hidden" name="_captcha" value="false">
             </form>
+
+            
+
 
         </div>
 
