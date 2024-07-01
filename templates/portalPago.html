@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js">
+    </script>
+
     <title>Facturacion digital </title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -31,24 +38,17 @@
                   <h6 class="my-0" id="contenido_variable">SISTEMA COTIZACION : </h6>
                   <small class="text-muted" id="contenido_variable">DESCRIPCION : Sistema Hipotecario u Sistema Automotriz</small>
                 </div>
-                <span class="text-muted" id="contenido_variable">$</span>
+                <span class="text-muted" id="contenido_variable">$2.500.000</span>
               </li>
               
               
               <li class="list-group-item d-flex justify-content-between">
                 <span id="contenido_variable">Total (CLP)</span>
-                <strong id="contenido_variable">$</strong>
+                <strong id="contenido_variable">$3.700.000</strong>
               </li>
             </ul>
       
-            <form class="card p-2">
-              <div class="input-group">
-               
-                <div class="input-group-append">
-                  <button type="submit" class="btn btn-secondary" id="boton_comprobar">Comprar</button>
-                </div>
-              </div>
-            </form>
+            
           </div>
           <div class="col-md-8 order-md-1">
             <h4 class="mb-3" id="contenido_variable">Datos de Facturacion</h4>
@@ -110,6 +110,13 @@
                   <select class="custom-select d-block w-100" id="country" required>
                     <option value="">buscar...</option>
                     <option id="contenido_variable">United States</option>
+                    <option id="contenido_variable">Chile</option>
+                    <option id="contenido_variable">Argentina</option>
+                    <option id="contenido_variable">Peru</option>
+                    <option id="contenido_variable">Uruguay</option>
+                    <option id="contenido_variable">Colombia</option>
+                    <option id="contenido_variable">Brazil</option>
+                    <option id="contenido_variable">Mexico</option>
                   </select>
                   <div class="invalid-feedback">
                     Please select a valid country.
@@ -119,7 +126,16 @@
                   <label for="state" id="contenido_variable">Estado</label>
                   <select class="custom-select d-block w-100" id="state" required>
                     <option value="">buscar...</option>
-                    <option id="contenido_variable">California</option>
+                    <option id="contenido_variable">Washington D.C</option>
+                    <option id="contenido_variable">Santiago</option>
+                    <option id="contenido_variable">Lima</option>
+                    <option id="contenido_variable">Buenos Aires</option>
+                    <option id="contenido_variable">Montevideo</option>
+                    <option id="contenido_variable">Ciudad De mexico</option>
+                    <option id="contenido_variable">Brazilia</option>
+                    
+
+
                   </select>
                   <div class="invalid-feedback">
                     Please provide a valid state.
@@ -194,7 +210,9 @@
                 </div>
               </div>
               <hr class="mb-4">
-              <button class="btn btn-primary btn-lg btn-block" type="submit" id="boton_verificar">Verificar</button>
+              <!--onclick="convertHtmltoPdf()"-->
+              <button class="btn btn-primary btn-lg btn-block"
+               type="button" id="boton_verificar">Verificar</button>
             </form>
           </div>
         </div>
@@ -214,11 +232,8 @@
       </div>
 
 
-      <!-- jQuery library -->
-      <script src="js/jquery.min.js"></script>
-
-        <!-- jsPDF library -->
-      <script src="js/jsPDF/dist/jspdf.min.js"></script>
+      <!-- jspdf library -->
+      <script  src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
       <script src="{{ url_for('static', filename='script/portalPago.js') }}"></script>
 

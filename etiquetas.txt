@@ -537,5 +537,79 @@ https://formsubmit.co/jaimeretamal47@gmail.com
 
 
 
+/*
+function generarPdf(event) {
+    event.preventDefault()
+
+
+    const contenido = document.getElementById('contenido')
+    if (contenido.childElementCount === 0) {
+        alert("no se puede generar registro ya que no existe registro de los campos de la factura")
+    }
+}
+*/
+
+//var doc = new jsPDF();
+
+//const boton = document.getElementById("boton_verificar");
+
+//boton.addEventListener('click',function(e) {
+
+    /*var elementHTML = document.getElementById('contenido').html();
+
+    var specialElementHandlers = {
+        '#elementH': function (e, renderer) {
+            return true;
+        }
+    };
+
+    doc.fromHTML(elementHTML, 15, 15, {
+        'width': 170,
+        'elementHandlers': specialElementHandlers
+    });
+
+    // Save the PDF
+    doc.save('sample-document.pdf');
+
+
+    e.preventDefault();
+
+    */
+
+    /*function generarPdf(event) {
+        event.preventDefault()
+    
+    
+        const contenido = document.getElementById('contenido')
+        if (contenido.childElementCount === 0) {
+            alert("no se puede generar registro ya que no existe registro de los campos de la factura")
+        }
+    }*/
+    //alert("rellena los campos de la factura")
+
+//    e.preventDefault();
+//});
+
+
+/*
+function convertHtmltoPdf() {
+
+    const { jsPDF } = window.jspdf;
+    
+    let doc = new jsPDF('1', 'mm',[1500, 1400]);
+    let pdfjs = document.querySelector('#contenido');
+
+    doc.html(pdfjs, {
+        callback: function(doc) {
+            doc.save("newpdf.pdf");
+
+        },
+        x: 12,
+        y: 12
+    });
+}
+*/
+
+
 
 //archivo_excel = excel_file.reader(data);
