@@ -1,10 +1,10 @@
-from flask import Flask, render_template , request ,jsonify , redirect, url_for
+from flask import Flask, render_template  , request ,jsonify , redirect, url_for
 import cx_Oracle 
 from datetime import date , datetime 
 from werkzeug.utils import secure_filename
 import requests
 import json
-
+import notificacionPush 
 #import conexion_oracle 
 
 app = Flask(__name__)
@@ -26,6 +26,10 @@ except Exception as ex:
 @app.route('/login.html')
 def signup():
     return render_template('/login.html')
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template("Error404.html"), 404
 
 
 @app.route('/index.html')
