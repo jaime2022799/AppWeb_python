@@ -1,13 +1,20 @@
 from flask import Flask, render_template  , request ,jsonify , redirect, url_for
+from flask_debugtoolbar import DebugToolbarExtension
 import cx_Oracle 
 from datetime import date , datetime 
 from werkzeug.utils import secure_filename
 import requests
 import json
 import notificacionPush 
-#import conexion_oracle 
+
 
 app = Flask(__name__)
+
+
+hex_key_sec = "3d94d4e88fd24a7f8da5aa719b663a43"
+app.config["SECRET_KEY"] = hex_key_sec
+TBAR = DebugToolbarExtension(app)
+
 
 try:
     connection=cx_Oracle.connect(
@@ -18,7 +25,7 @@ try:
 
     )
 except Exception as ex:
-    print(ex)
+        print(ex)
 
 
 @app.route('/')
@@ -31,6 +38,10 @@ def signup():
 def page_not_found(error):
     return render_template("Error404.html"), 404
 
+
+@app.route("/toolbar", methods=["GET"])
+def DEB_EX():
+    return render_template("toolbar_key.html")
 
 @app.route('/index.html')
 def home():
@@ -203,60 +214,43 @@ def pag_cotizacion():
     return  render_template('/index.html'), 200
 
 
-#@app.route('/pago_registro', method='POST')
-#def pag_registro_pago():
+#hacer una insercion de portal pago 
+@app.route('/portalPago', methods=['POST'])
+def pag_registro_pago():
      #VARIABLES
-#    fecha = date.today()
-#    fechaHora = datetime.now()
-#    time = fechaHora.strftime("%H:%M:%S")
+    fecha = date.today()
+    fechaHora = datetime.now()
+    time = fechaHora.strftime("%H:%M:%S")
 
-#    if request.method == 'POST':
+    if request.method == 'POST':
          
-         # rut = request.form['rut']
-         # numero_cuenta = request.form['cuenta']
-         # nombre_titular = request.form['nombre_titular']
-         # cvc_titular = request.form['cvc_titular']
+          nombre_completo = request.form['nombre']
+          apellido_completo = request.form['apellido']
+          nombre_usuario = request.form['usuario']
+          email = request.form['email']
+          direccion = request.form['direccion']
+          telefono = request.form['telefono']
+          pais = request.form['pais']
+          estado = request.form['estado']
+          codigo_postal = request.form['zip']
+          tipo_tarjeta = request.form['check']
+          nombre_tarjeta = request.form['nombreTarjeta']
+          numero_cuenta = request.form['numeroTarjeta']
+          expiracion = request.form['expiracion']
+          cvv = request.form['cvv']
          
-        #execute = """
-        #    INSERT INTO PAGO_COTIZACION (rut,numero_cuenta,nombre_titular,cvc_titular,fecha,hora) 
-            # VALUES (:rut,:numero_cuenta,:nombre_titular,:cvc_titular,:fecha,:hora)       
-        #"""
-        # cursor.execute(execute, {'rut':rut,'numero_cuenta':numero_cuenta,'nombre_titular':nombre_titular,'cvc_titular':cvc_titular,'fecha':fecha,'hora':hora})
-#        connection.commit()  
+          execute = """
+            INSERT INTO FACTURA_REGISTRO (nombre_completo,apellido_completo,nombre_usuario,email,direccion,telefono,pais,estado,codigo_postal,tipo_tarjeta,nombre_tarjeta ,numero_cuenta,expiracion,cvv,fecha,hora) 
+             VALUES (:nombre_completo,:apellido_completo,:nombre_usuario,:email,:direccion,:telefono,:pais,:estado,:codigo_postal,:tipo_tarjeta,:nombre_tarjeta ,:numero_cuenta,:expiracion,:cvv,:fecha,:time)
+          """
+          
+          cursor.execute(execute, {'nombre_completo':nombre_completo,'apellido_completo':apellido_completo,'nombre_usuario':nombre_usuario,'email':email,'direccion':direccion,'telefono':telefono,'pais':pais,'estado':estado,'codigo_postal':codigo_postal,'tipo_tarjeta':tipo_tarjeta,'nombre_tarjeta':nombre_tarjeta,'numero_cuenta':numero_cuenta,'expiracion':expiracion,'cvv':cvv,'fecha':fecha,'time':time})
+          connection.commit()  
 
-#    else:
-#        return "404 ERROR REQUEST", 400
+    else: 
+        return "404 ERROR REQUEST", 400
     
-#    return render_template('/login.html'), 200
-
-
-#@app.route('/registro_titular', method='POST')
-#def pag_registro_pago():
-     #VARIABLES
-#    fecha = date.today()
-#    fechaHora = datetime.now()
-#    time = fechaHora.strftime("%H:%M:%S")
-
-#    if request.method == 'POST':
-         
-         # rut = request.form['rut']
-         # nombre_titular = request.form['nombre_titular']
-         # apellido_titular = request.form['apellido_titular']
-         # email_titular = request.form['email_titular']
-        #  metodo_de_pago = request.form['metodo_de_pago']
-        #  nombre_banco_tarjeta = request.form['metodo_de_pago']
-         
-        #execute = """
-        #    INSERT INTO PAGO_COTIZACION (rut,numero_cuenta,nombre_titular,cvc_titular,fecha,hora) 
-            # VALUES (:rut,:nombre_titular,:apellido_titular,:email_titular,:metodo_de_pago,:fecha,:hora,:nombre_banco_tarjeta)       
-        #"""
-        # cursor.execute(execute, {'rut':rut,'nombre_titular':nombre_titular,'apellido_titular':apellido_titular,'email_titular':email_titular,'metodo_de_pago':metodo_de_pago,'fecha':fecha,'hora':hora,'nombre_banco_tarjeta':nombre_banco_tarjeta})
-#        connection.commit()  
-        
-#    else:
-#        return "404 ERROR REQUEST", 400
-    
-#    return render_template('/login.html'), 200
+    return render_template('/login.html'), 200
 
 
 

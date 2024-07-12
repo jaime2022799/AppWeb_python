@@ -612,4 +612,34 @@ function convertHtmltoPdf() {
 
 
 
+#@app.route('/registro_titular', method='POST')
+#def pag_registro_pago():
+     #VARIABLES
+#    fecha = date.today()
+#    fechaHora = datetime.now()
+#    time = fechaHora.strftime("%H:%M:%S")
+
+#    if request.method == 'POST':
+         
+         # rut = request.form['rut']
+         # nombre_titular = request.form['nombre_titular']
+         # apellido_titular = request.form['apellido_titular']
+         # email_titular = request.form['email_titular']
+        #  metodo_de_pago = request.form['metodo_de_pago']
+        #  nombre_banco_tarjeta = request.form['metodo_de_pago']
+         
+        #execute = """
+        #    INSERT INTO PAGO_COTIZACION (rut,numero_cuenta,nombre_titular,cvc_titular,fecha,hora) 
+            # VALUES (:rut,:nombre_titular,:apellido_titular,:email_titular,:metodo_de_pago,:fecha,:hora,:nombre_banco_tarjeta)       
+        #"""
+        # cursor.execute(execute, {'rut':rut,'nombre_titular':nombre_titular,'apellido_titular':apellido_titular,'email_titular':email_titular,'metodo_de_pago':metodo_de_pago,'fecha':fecha,'hora':hora,'nombre_banco_tarjeta':nombre_banco_tarjeta})
+#        connection.commit()  
+        
+#    else:
+#        return "404 ERROR REQUEST", 400
+    
+#    return render_template('/login.html'), 200
+
+
+
 //archivo_excel = excel_file.reader(data);

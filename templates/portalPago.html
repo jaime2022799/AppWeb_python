@@ -54,18 +54,18 @@
           </div>
           <div class="col-md-8 order-md-1">
             <h4 class="mb-3" id="contenido_variable">Datos de Facturacion</h4>
-            <form class="needs-validation" novalidate>
+            <form method="POST" action="portalPago"  class="needs-validation" novalidate >
               <div class="row">
                 <div class="col-md-6 mb-3">
                   <label for="firstName" id="contenido_variable">Nombre completo</label>
-                  <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                  <input type="text" class="form-control" id="nombre" placeholder="" value="" required>
                   <div class="invalid-feedback">
                     Valid first name is required.
                   </div>
                 </div>
                 <div class="col-md-6 mb-3">
                   <label for="lastName" id="contenido_variable">apellido completo</label>
-                  <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                  <input type="text" class="form-control" id="apellido" placeholder="" value="" required>
                   <div class="invalid-feedback">
                     Valid last name is required.
                   </div>
@@ -78,7 +78,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text">@</span>
                   </div>
-                  <input type="text" class="form-control" id="username" placeholder="Username" required>
+                  <input type="text" class="form-control" id="usuario" placeholder="Username" required>
                   <div class="invalid-feedback" style="width: 100%;">
                     Your username is required.
                   </div>
@@ -95,7 +95,7 @@
       
               <div class="mb-3">
                 <label for="address" id="contenido_variable">Direccion</label>
-                <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+                <input type="text" class="form-control" id="direccion" placeholder="1234 Main St" required>
                 <div class="invalid-feedback">
                   Please enter your shipping address.
                 </div>
@@ -103,13 +103,13 @@
       
               <div class="mb-3">
                 <label for="address2" id="contenido_variable">Telefono<span class="text-muted"></span></label>
-                <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+                <input type="text" class="form-control" id="telefono" placeholder="Apartment or suite">
               </div>
       
               <div class="row">
                 <div class="col-md-5 mb-3">
                   <label for="country" id="contenido_variable">Pais</label>
-                  <select class="custom-select d-block w-100" id="country" required>
+                  <select class="custom-select d-block w-100" id="pais" required>
                     <option value="">buscar...</option>
                     <option id="contenido_variable">United States</option>
                     <option id="contenido_variable">Chile</option>
@@ -126,7 +126,7 @@
                 </div>
                 <div class="col-md-4 mb-3">
                   <label for="state" id="contenido_variable">Estado</label>
-                  <select class="custom-select d-block w-100" id="state" required>
+                  <select class="custom-select d-block w-100" id="estado" required>
                     <option value="">buscar...</option>
                     <option id="contenido_variable">Washington D.C</option>
                     <option id="contenido_variable">Santiago</option>
@@ -166,22 +166,22 @@
       
               <div class="d-block my-3">
                 <div class="custom-control custom-radio">
-                  <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                  <input id="check" name="paymentMethod" type="radio" class="custom-control-input" checked required>
                   <label class="custom-control-label" for="credit" id="contenido_variable">Tarjeta Credito</label>
                 </div>
                 <div class="custom-control custom-radio">
-                  <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+                  <input id="check" name="paymentMethod" type="radio" class="custom-control-input" required>
                   <label class="custom-control-label" for="debit" id="contenido_variable">Tarjeta Debito</label>
                 </div>
                 <div class="custom-control custom-radio">
-                  <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
+                  <input id="check" name="paymentMethod" type="radio" class="custom-control-input" required>
                   <label class="custom-control-label" for="paypal" id="contenido_variable">PayPal</label>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6 mb-3">
                   <label for="cc-name" id="contenido_variable">Nombre Tarjeta</label>
-                  <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                  <input type="text" class="form-control" id="nombreTarjeta" placeholder="" required>
                   <small class="text-muted">Full name as displayed on card</small>
                   <div class="invalid-feedback">
                     Name on card is required
@@ -189,7 +189,7 @@
                 </div>
                 <div class="col-md-6 mb-3">
                   <label for="cc-number" id="contenido_variable">Numero Tarjeta</label>
-                  <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                  <input type="text" class="form-control" id="numeroTarjeta" placeholder="" required>
                   <div class="invalid-feedback">
                     Credit card number is required
                   </div>
@@ -198,14 +198,14 @@
               <div class="row">
                 <div class="col-md-3 mb-3">
                   <label for="cc-expiration" id="contenido_variable">Expiracion</label>
-                  <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+                  <input type="text" class="form-control" id="expiracion" placeholder="" required>
                   <div class="invalid-feedback">
                     Expiration date required
                   </div>
                 </div>
                 <div class="col-md-3 mb-3">
                   <label for="cc-cvv" id="contenido_variable">CVV</label>
-                  <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+                  <input type="text" class="form-control" id="cvv" placeholder="" required>
                   <div class="invalid-feedback">
                     Security code required
                   </div>
