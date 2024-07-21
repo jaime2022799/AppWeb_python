@@ -641,5 +641,58 @@ function convertHtmltoPdf() {
 #    return render_template('/login.html'), 200
 
 
+        """
+            if 'archivo' not in request.files:
+                flash('no se encuentra archivo')
+            archivos = request.files['archivo']
+            
+            if archivos and allowed_file(archivos.filename):
+                filename = secure_filename(archivos.filename)
+                archivos.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+                flash('Files succesfully upload')
+        else:
+            return '404 bad request' , 400
+        """
+   
+#if request.method == 'POST':
+        #f = request.files['archivo']
+        #filename = secure_filename(f.filename)
+        # Guardamos el archivo en el directorio "Archivos PDF"
+        #f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        #return render_template('/index.html'), 200
+        # Retornamos una respuesta satisfactoria
+        #execute = """
+        #    INSERT INTO ARCHIVO_BFILE_COTIZADOR (nombre,fecha,hora,archivo)
+        #    VALUES (:nombre,:fecha,:time,:name_file);
+        #"""
+        
+
+
+
+ #f_archivo = archivos.save(archivos.filename)
+        
+        #name_file = f_archivo
+
+        #execute = """
+        #    INSERT INTO ARCHIVO_BFILE_COTIZADOR (nombre,fecha,hora,archivo)
+        #    VALUES (:nombre,:fecha,:time,:name_file);
+        #"""
+        #cursor.execute(execute, {'nombre':nombre,'fecha':fecha,'time':time,'name_file':name_file})
+
+#cur = connection.cursor()
+#cur.execute("SELECT * FROM SIGNUP WHERE HORA IS NOT NULL")
+#for id_signup , email, clave_nueva , clave,fecha,nombre,apellido,hora in cur:
+#    print("Campo: ", id_signup)
+#    print("Campo: ", email)
+#    print("Campo: ", clave_nueva)
+#    print("Campo: ", clave)
+#    print("Campo: ", fecha)
+#    print("Campo: ", nombre)
+#    print("Campo: ", apellido)
+#    print("Campo: ", hora)
+
+:tipo_tarjeta,:nombre_tarjeta ,:numero_cuenta,:expiracion,:cvv,
+
+class="needs-validation" novalidate 
 
 //archivo_excel = excel_file.reader(data);

@@ -193,7 +193,7 @@
                 <script src="{{ url_for('static', filename='script/readCsv.js') }}" type="module"></script>
                
                 
-                <form  method="POST" action="upload"  id="form" target="_blank" enctype="multipart/form-data">
+                <form  action="modulo_cotizador.html" method="POST"  id="form" target="_blank" enctype="multipart/form-data">
                 
                     <input id="tabla" name="archivo" type="file">
     
@@ -240,15 +240,20 @@
 
     
 
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <!--script src="https://smtpjs.com/v3/smtp.js"></script-->
 
-    <script src="{{ url_for('static', filename='script/enviarExcel.js') }}" type="module"></script>
+    <!--script src="{{ url_for('static', filename='script/enviarExcel.js') }}" type="module"></script-->
 
     <script src="{{ url_for('static', filename='script/exportExcel.js') }}"></script>
+    <script src="{{ url_for('static', filename='script/xlsx.full.min.js') }}"></script>
+    
+    <script src="{{ url_for('static', filename='script/fileSaver.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='script/tableexport.min.js') }}"></script>
 
     <script src="{{ url_for('static', filename='script/dashboard.js') }}"></script>
 
     <script src="{{ url_for('static', filename='script/sweetalert.min.js') }}"></script>
+
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     

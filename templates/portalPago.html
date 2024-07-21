@@ -54,18 +54,23 @@
           </div>
           <div class="col-md-8 order-md-1">
             <h4 class="mb-3" id="contenido_variable">Datos de Facturacion</h4>
-            <form method="POST" action="portalPago"  class="needs-validation" novalidate >
+
+            <form action="portalPago.html" method="POST">
+
+              <script src="{{ url_for('static', filename='script/portalPago.js') }}" type="module"></script>
+
+
               <div class="row">
                 <div class="col-md-6 mb-3">
                   <label for="firstName" id="contenido_variable">Nombre completo</label>
-                  <input type="text" class="form-control" id="nombre" placeholder="" value="" required>
+                  <input type="nombre" class="form-control" name="nombre" placeholder="" value="" required>
                   <div class="invalid-feedback">
                     Valid first name is required.
                   </div>
                 </div>
                 <div class="col-md-6 mb-3">
                   <label for="lastName" id="contenido_variable">apellido completo</label>
-                  <input type="text" class="form-control" id="apellido" placeholder="" value="" required>
+                  <input type="apellido" class="form-control" name="apellido" placeholder="" value="" required>
                   <div class="invalid-feedback">
                     Valid last name is required.
                   </div>
@@ -78,7 +83,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text">@</span>
                   </div>
-                  <input type="text" class="form-control" id="usuario" placeholder="Username" required>
+                  <input type="usuario" class="form-control" name="usuario" placeholder="Username" required>
                   <div class="invalid-feedback" style="width: 100%;">
                     Your username is required.
                   </div>
@@ -87,7 +92,7 @@
       
               <div class="mb-3">
                 <label for="email" id="contenido_variable">Email <span class="text-muted"></span></label>
-                <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                <input type="email" class="form-control" name="email" placeholder="you@example.com">
                 <div class="invalid-feedback">
                   Please enter a valid email address for shipping updates.
                 </div>
@@ -95,7 +100,7 @@
       
               <div class="mb-3">
                 <label for="address" id="contenido_variable">Direccion</label>
-                <input type="text" class="form-control" id="direccion" placeholder="1234 Main St" required>
+                <input type="direccion" class="form-control" name="direccion" placeholder="1234 Main St" required>
                 <div class="invalid-feedback">
                   Please enter your shipping address.
                 </div>
@@ -103,13 +108,13 @@
       
               <div class="mb-3">
                 <label for="address2" id="contenido_variable">Telefono<span class="text-muted"></span></label>
-                <input type="text" class="form-control" id="telefono" placeholder="Apartment or suite">
+                <input type="telefono" class="form-control" name="telefono" placeholder="Apartment or suite">
               </div>
       
               <div class="row">
                 <div class="col-md-5 mb-3">
                   <label for="country" id="contenido_variable">Pais</label>
-                  <select class="custom-select d-block w-100" id="pais" required>
+                  <select class="custom-select d-block w-100" name="pais" required>
                     <option value="">buscar...</option>
                     <option id="contenido_variable">United States</option>
                     <option id="contenido_variable">Chile</option>
@@ -126,7 +131,7 @@
                 </div>
                 <div class="col-md-4 mb-3">
                   <label for="state" id="contenido_variable">Estado</label>
-                  <select class="custom-select d-block w-100" id="estado" required>
+                  <select class="custom-select d-block w-100" name="estado" required>
                     <option value="">buscar...</option>
                     <option id="contenido_variable">Washington D.C</option>
                     <option id="contenido_variable">Santiago</option>
@@ -145,7 +150,7 @@
                 </div>
                 <div class="col-md-3 mb-3">
                   <label for="codigo_postal" id="contenido_variable">Codigo postal</label>
-                  <input type="text" class="form-control" id="zip" placeholder="" required>
+                  <input type="text" class="form-control" name="codigo" placeholder="" required>
                   <div class="invalid-feedback">
                     Zip code required.
                   </div>
@@ -181,7 +186,7 @@
               <div class="row">
                 <div class="col-md-6 mb-3">
                   <label for="cc-name" id="contenido_variable">Nombre Tarjeta</label>
-                  <input type="text" class="form-control" id="nombreTarjeta" placeholder="" required>
+                  <input type="text" class="form-control" name="nombreTarjeta" id="nombreTarjeta" placeholder="" required>
                   <small class="text-muted">Full name as displayed on card</small>
                   <div class="invalid-feedback">
                     Name on card is required
@@ -189,7 +194,7 @@
                 </div>
                 <div class="col-md-6 mb-3">
                   <label for="cc-number" id="contenido_variable">Numero Tarjeta</label>
-                  <input type="text" class="form-control" id="numeroTarjeta" placeholder="" required>
+                  <input type="text" class="form-control" name="numeroTarjeta" id="numeroTarjeta" placeholder="" required>
                   <div class="invalid-feedback">
                     Credit card number is required
                   </div>
@@ -198,14 +203,14 @@
               <div class="row">
                 <div class="col-md-3 mb-3">
                   <label for="cc-expiration" id="contenido_variable">Expiracion</label>
-                  <input type="text" class="form-control" id="expiracion" placeholder="" required>
+                  <input type="text" class="form-control" name="expiracion" id="expiracion" placeholder="" required>
                   <div class="invalid-feedback">
                     Expiration date required
                   </div>
                 </div>
                 <div class="col-md-3 mb-3">
                   <label for="cc-cvv" id="contenido_variable">CVV</label>
-                  <input type="text" class="form-control" id="cvv" placeholder="" required>
+                  <input type="text" class="form-control" name="cvv" id="cvv" placeholder="" required>
                   <div class="invalid-feedback">
                     Security code required
                   </div>
@@ -214,7 +219,7 @@
               <hr class="mb-4">
               <!--onclick="convertHtmltoPdf()"-->
               <button class="btn btn-primary btn-lg btn-block"
-               type="button" id="boton_verificar">Verificar</button>
+               type="submit" id="boton_verificar">Verificar</button>
             </form>
           </div>
         </div>
@@ -233,23 +238,21 @@
         </footer>
       </div>
 
-      <script src="https://smtpjs.com/v3/smtp.js"></script>
+      <!--script src="https://smtpjs.com/v3/smtp.js"></script-->
 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+      <!--script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
       </script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js">
       </script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js">
-      </script>
+      </script-->
 
       <script src="{{ url_for('static', filename='script/sweetalert.min.js') }}"></script>
 
       <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
       <!-- jspdf library -->
-      <script  src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
-      <script src="{{ url_for('static', filename='script/portalPago.js') }}" type="module"></script>
+      <!--script  src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script-->
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
  

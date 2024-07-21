@@ -83,7 +83,8 @@ enviar_excel.addEventListener('click',  function(event) {
     console.log(encodig_64);
     
     console.log(imagenBase64);
-   
+    
+    /*
     Email.send({
       SecureToken : "a6d0a20e-d612-498b-82a6-23a6a2203efc",
       To : 'jaimeretamal47@gmail.com',
@@ -102,6 +103,7 @@ enviar_excel.addEventListener('click',  function(event) {
       
    }).then(
       
+   
     //message => alert(message)
     message => swal('Genial...','se a enviado una notificacion de su cotizacion','success')
   );
@@ -116,10 +118,7 @@ enviar_excel.addEventListener('click',  function(event) {
     
     document.getElementById("imagen").innerHTML = nueva_imagen.outerHTML;*/
 
-
    }
-
-
   
    reader.readAsDataURL(cargarimagen);
     

@@ -84,7 +84,7 @@ boton.addEventListener("click", function(e) {
     //var x = 'newpdf.pdf';
     //base64 = x.toString();
     
-    Email.send({
+    /*Email.send({
         SecureToken : "167af3e5-f3ee-4342-86ad-e431aebe2b29",
         To : 'jaimeretamal47@gmail.com',
         From : "jaimeretamal47@gmail.com",
@@ -106,7 +106,7 @@ boton.addEventListener("click", function(e) {
     
      
     
-    
+    */
 
     e.preventDefault();
     
