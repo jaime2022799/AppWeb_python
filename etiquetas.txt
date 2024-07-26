@@ -665,7 +665,9 @@ function convertHtmltoPdf() {
         #    INSERT INTO ARCHIVO_BFILE_COTIZADOR (nombre,fecha,hora,archivo)
         #    VALUES (:nombre,:fecha,:time,:name_file);
         #"""
-        
+
+
+
 
 
 
@@ -678,6 +680,9 @@ function convertHtmltoPdf() {
         #    VALUES (:nombre,:fecha,:time,:name_file);
         #"""
         #cursor.execute(execute, {'nombre':nombre,'fecha':fecha,'time':time,'name_file':name_file})
+
+  for row in cursor.execute("select * from CRUD_ARCHIVO_COTIZACION"):
+        
 
 #cur = connection.cursor()
 #cur.execute("SELECT * FROM SIGNUP WHERE HORA IS NOT NULL")

@@ -37,16 +37,8 @@ def allowed_file(file):
         return True
     return False
     
-    #if request.method == 'POST':
-     #   archivo = request.files['archivo']
-
-      #  if archivo and allowed_file(archivo.filename):
-       #     filename = secure_filename(archivo.filename)
-        #    archivo.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-    #else:
     
 
-@app.route('/')
 
 @app.route('/login.html')
 def signup():
@@ -78,9 +70,9 @@ def dashboard():
 def modulo_cotizador():
     return render_template('/modulo_cotizador.html')
 
-@app.route('/crud_cotizador.html')
-def crud_cotizador():
-    return render_template('/crud_cotizador.html')
+#@app.route('/crud_cotizador.html')
+#def crud_cotizador():
+ #   return render_template('/crud_cotizador.html')
 
 
 cursor = connection.cursor()
@@ -115,6 +107,23 @@ def carga():
         connection.commit() 
 
     return render_template('/index.html'),200
+
+
+
+@app.route('/crud_cotizador.html')
+def cotizador():   
+   #campo = ["JAIME",	"JAIMERETAMAL47@GMAIL",	"JOAQUIN PALACIOS #556",	"SISTEMA AUTOMOTRIZ	22/07/24",	"Cotizacion_21_07_24_18_00",	"activo",	"16:57"]
+   #cursor.execute("SELECT * FROM CRUD_ARCHIVO_COTIZACION")
+   #empleado = cursor.fetchall()
+    for row in cursor.execute("select * from CRUD_ARCHIVO_COTIZACION"):
+        
+    #row = cursor.execute("select * from CRUD_ARCHIVO_COTIZACION")
+        #row = cursor.fetchall()
+    #row = cursor.fetchall()
+       
+        return render_template('/crud_cotizador.html', campos=row), 200
+
+
     
 @app.route('/portalPago.html', methods=['POST'])
 def pago():
@@ -256,8 +265,11 @@ def pag_formulario_administrativo():
     return render_template('/index.html') , 200
 
 
-#cursor.execute("INSERT INTO DATOS_FACTURA VALUES ('jaime','jaimeretamal@gmail.com','joaquin palacios 556','990383265','15/07/24','18:04','JAIME','RETAMAL')")
-for row in cursor.execute("select * from datos_factura"):
+cursor.execute("SELECT * FROM CRUD_ARCHIVO_COTIZACION")
+data = cursor.fetchall()
+print(data)
+
+for row in cursor.execute("select * from CRUD_ARCHIVO_COTIZACION"):
     print(row)
 #connection.commit()
 
