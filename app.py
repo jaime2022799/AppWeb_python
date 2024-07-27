@@ -8,6 +8,7 @@ from werkzeug.utils import secure_filename
 import requests
 import json
 import notificacionPush 
+from flask import make_response 
 
 #hex_key_sec = "3d94d4e88fd24a7f8da5aa719b663a43"
 #app.config["SECRET_KEY"] = hex_key_sec
@@ -42,6 +43,11 @@ def allowed_file(file):
 
 @app.route('/login.html')
 def signup():
+    
+    response = make_response("cookie_app")
+    response.set_cookie("cookie_app","cookie")
+    cookie_value = request.cookies.get("cookie_app")
+
     return render_template('/login.html')
 
 @app.errorhandler(404)
@@ -70,13 +76,7 @@ def dashboard():
 def modulo_cotizador():
     return render_template('/modulo_cotizador.html')
 
-#@app.route('/crud_cotizador.html')
-#def crud_cotizador():
- #   return render_template('/crud_cotizador.html')
-
-
 cursor = connection.cursor()
-
 
 
 @app.route('/modulo_cotizador.html', methods=["POST"])
@@ -112,9 +112,6 @@ def carga():
 
 @app.route('/crud_cotizador.html')
 def cotizador():   
-   #campo = ["JAIME",	"JAIMERETAMAL47@GMAIL",	"JOAQUIN PALACIOS #556",	"SISTEMA AUTOMOTRIZ	22/07/24",	"Cotizacion_21_07_24_18_00",	"activo",	"16:57"]
-   #cursor.execute("SELECT * FROM CRUD_ARCHIVO_COTIZACION")
-   #empleado = cursor.fetchall()
     for row in cursor.execute("select * from CRUD_ARCHIVO_COTIZACION"):
         
     #row = cursor.execute("select * from CRUD_ARCHIVO_COTIZACION")
@@ -166,6 +163,9 @@ def pago():
 @app.route('/login.html', methods=['POST'])
 def post_data():
 
+    
+    
+    
     #VARIABLES
     fecha = date.today()
     fechaHora = datetime.now()
