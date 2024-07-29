@@ -50,6 +50,14 @@ def signup():
 
     return render_template('/login.html')
 
+
+@app.route('/modulo_formulario_administrativo.html')
+def formulario_administrativo():
+
+  
+   cursor.execute("select * from formulario_administrativo")
+   row = cursor.fetchall()
+   return render_template('/modulo_formulario_administrativo.html', row=row)
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template("Error404.html"), 404
@@ -265,11 +273,11 @@ def pag_formulario_administrativo():
     return render_template('/index.html') , 200
 
 
-cursor.execute("SELECT * FROM CRUD_ARCHIVO_COTIZACION")
+cursor.execute("SELECT * FROM formulario_administrativo")
 data = cursor.fetchall()
 print(data)
 
-for row in cursor.execute("select * from CRUD_ARCHIVO_COTIZACION"):
+for row in cursor.execute("select * from formulario_administrativo"):
     print(row)
 #connection.commit()
 
