@@ -9,6 +9,7 @@ import requests
 import json
 import notificacionPush 
 from flask import make_response 
+import app_models_oracle
 
 #hex_key_sec = "3d94d4e88fd24a7f8da5aa719b663a43"
 #app.config["SECRET_KEY"] = hex_key_sec
@@ -20,16 +21,6 @@ app = Flask(__name__)
 app.config["UPLOAD_FOLDER"] = "static/uploads"
 ALLOWED_EXTENSIONS = set(['pdf','xlsx','txt','csv'])
 
-try:
-    connection=cx_Oracle.connect(
-        user='user_boss',
-        password='2024',
-        dsn='localhost:1521/ORCL',
-        encoding='UTF-8'
-
-    )
-except Exception as ex:
-        print(ex)
 
 def allowed_file(file):
     file = file.split('.')
@@ -39,6 +30,11 @@ def allowed_file(file):
     return False
     
     
+@classmethod
+def get_by_id(cls, id):
+
+    return cls.query.filter(cls.id == id).first()
+
 
 
 @app.route('/login.html')
@@ -57,7 +53,35 @@ def formulario_administrativo():
   
    cursor.execute("select * from formulario_administrativo")
    row = cursor.fetchall()
+
    return render_template('/modulo_formulario_administrativo.html', row=row)
+
+
+@app.route('/editUser.html')
+def edit_formulario():
+   
+   #x = cursor.execute("select * from formulario_administrativo")
+   cursor.execute("select * from formulario_administrativo")
+   row = cursor.fetchall()
+
+   if row:
+       
+       nombre = request.form['nombre']
+       apellido = request.form['apellido']
+       tipo_evento = request.form['tipo_evento']
+       contacto = request.form['contacto']
+       direccion = request.form['direccion']
+       email = request.form['email']
+       fecha = request.form['fecha']
+       hora = request.form['hora']
+
+       row = row
+   #row = ["jaime","retamal"]
+   #data = edit_function(user)
+   return render_template('/editUser.html', row=row)
+
+
+
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template("Error404.html"), 404
@@ -84,7 +108,8 @@ def dashboard():
 def modulo_cotizador():
     return render_template('/modulo_cotizador.html')
 
-cursor = connection.cursor()
+
+cursor = app_models_oracle.connection.cursor()
 
 
 @app.route('/modulo_cotizador.html', methods=["POST"])
@@ -112,7 +137,7 @@ def carga():
         """ 
         cursor.execute(execute, {'nombre':nombre,'fecha':fecha,'time':time,'filename':filename})
 
-        connection.commit() 
+        app_models_oracle.connection.commit() 
 
     return render_template('/index.html'),200
 
@@ -122,9 +147,6 @@ def carga():
 def cotizador():   
     for row in cursor.execute("select * from CRUD_ARCHIVO_COTIZACION"):
         
-    #row = cursor.execute("select * from CRUD_ARCHIVO_COTIZACION")
-        #row = cursor.fetchall()
-    #row = cursor.fetchall()
        
         return render_template('/crud_cotizador.html', campos=row), 200
 
@@ -161,49 +183,46 @@ def pago():
         cursor.execute(execute, {'usuario':usuario,'email':email,'direccion':direccion,'telefono':telefono,'fecha':fecha,'time':time,
                                  'nombre':nombre,'apellido':apellido,'pais':pais,'estado':estado,'codigo':codigo,
                                  'metodo':metodo,'numeroTarjeta':numeroTarjeta,'nombreTarjeta':nombreTarjeta,'expiracion':expiracion,'cvv':cvv})
-        connection.commit()  
+        app_models_oracle.connection.commit()  
     else:
         return "404 BAD REQUEST", 400
     
     return render_template('/index.html'),200
 
 
+
+
 @app.route('/login.html', methods=['POST'])
 def post_data():
 
-    
-    
-    
-    #VARIABLES
+     #VARIABLES
     fecha = date.today()
     fechaHora = datetime.now()
     time = fechaHora.strftime("%H:%M:%S")
-   
 
-    if request.method == 'POST':
+    if request.method == "POST":
 
         nombre = request.form['nombre']
         apellido = request.form['apellido']
         email = request.form['email']
         password_create = request.form['password_create']
         password_confirm = request.form['password_confirm']
-
-
+        
+        
         execute = """
-        INSERT INTO SIGNUP (EMAIL,CLAVE_NUEVA,CLAVE,FECHA,NOMBRE,APELLIDO,HORA) 
-        VALUES (:email,:password_create,:password_confirm,:fecha,:nombre,:apellido,:time)
-        """
-        
+            INSERT INTO SIGNUP (EMAIL,CLAVE_NUEVA,CLAVE,FECHA,NOMBRE,APELLIDO,HORA) 
+            VALUES (:email,:password_create,:password_confirm,:fecha,:nombre,:apellido,:time)
+            """
+            
         cursor.execute(execute, {'email':email, 'password_create':password_create, 'password_confirm':password_confirm, 'fecha':fecha, 'nombre':nombre, 'apellido':apellido, 'time':time})
-       
-        connection.commit()
         
-        
+        app_models_oracle.connection.commit()
+            
+            
     else:
         return 'BAD REQUEST', 400
-    
+        
     return render_template('/login.html'), 200
-
 
 
 
@@ -228,7 +247,7 @@ def login_registro():
         
         cursor.execute(execute, {'email':email, 'clave':clave,'fecha':fecha,'time':time})
        
-        connection.commit()
+        app_models_oracle.connection.commit()
        
         
         #return render_template('/index.html')
@@ -264,7 +283,7 @@ def pag_formulario_administrativo():
 
         cursor.execute(execute, {'nombre':nombre,'apellido':apellido,'tipo_evento':tipo_evento,'contacto':contacto,'direccion':direccion,'email':email,'fecha':fecha,'time':time})
 
-        connection.commit()
+        app_models_oracle.connection.commit()
 
 
     else:
@@ -272,15 +291,7 @@ def pag_formulario_administrativo():
      
     return render_template('/index.html') , 200
 
-
-cursor.execute("SELECT * FROM formulario_administrativo")
-data = cursor.fetchall()
-print(data)
-
-for row in cursor.execute("select * from formulario_administrativo"):
-    print(row)
-#connection.commit()
-
+    
 
 if __name__ == '__main__':
     app.debug = True

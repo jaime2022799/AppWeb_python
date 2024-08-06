@@ -553,63 +553,6 @@
         </div>
 
 
-        <div class="contabilidad">
-
-
-            <h3 class="btn btn-dark" style="width: 20%; position: relative; top: 10%; margin-left: 37%; left: 30px;">Cotizacion</h3>
-            <table class="table table-dark table-hover" style="position: relative; top: 250px; width: 1100px; left: 150px; ">
-
-                <button  id="exportar" class="btn btn-dark">Descargar
-                </button>
-                
-   
-                <script src="{{ url_for('static', filename='script/readCsv.js') }}" type="module"></script>
-               
-                
-                <!--form  method="POST" action="upload"  id="form" target="_blank" enctype="multipart/form-data">
-                
-                    <input id="tabla" name="archivo" type="file">
-
-                    <div id="imagen"></div>
-                    
-                    <input id="enviar" name="enviar" type="submit" value="Enviar" class="btn btn-primary" >
-                </form-->
-                  
-                  
-                  
-                <script type="text/javascript"
-                src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-                <script type="text/javascript">
-                emailjs.init('lcAIcpNR6vvfLZoym')
-                </script>
-
-                <!--h4>id="csv-upload-form"</h4-->
-                
-
-                <thead  id="tabla_excel" hidden>
-                  <tr>
-                    <th id="id" scope="col">id</th>
-                    <th id="nombre" scope="col">Nombre</th>
-                    <th id="apellido" scope="col">Apellido</th>
-                    <th id="numero" scope="col">Celular</th>
-                    <th id="cant_personas" scope="col">Cant_personas</th>
-                    <th id="tipo_evento">tipo Evento</th>
-                    <th id="fecha" scope="col">Fecha</th>
-                    <th id="monto" scope="col">Monto</th>
-                  </tr>
-                </thead>
-
-
-                <tbody class="table-group-divider">
-                    
-                    
-                </tbody>
-            </table>
-
-        </div>
-
-
         <div class="tabla" style="height: 600px;  position: relative; top: 170px; width: 100%;"> 
             <h3 class="btn btn-dark" style="width: 15%; position: relative; top: 25%; margin-left: 37%; left: 60px;">Equipo</h3>
                 <table class="table table-dark table-hover" style="position: relative; top: 200px; width: 1100px; margin-left: 300px; left: 20px; ">

@@ -196,44 +196,42 @@
        </div>
 
        <div class="crud">
-            <table class="display" style="width:100%">
-                <thead>
-                <tr>
-                    <th scope="col">nombre</th>
-                    <th scope="col">apellido</th>
-                    <th scope="col">tipo_evento</th>
-                    <th scope="col">contacto</th>
-                    <th scope="col">direccion</th>
-                    <th scope="col">email</th>
-                    <th scope="col">fecha</th>
-                    <th scope="col">hora</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    {% for item in row%}
+           
+        
+            
+                <h2 class="mb-4 pb-2 pd-md--0 mb-md-5 px-md-2 text-center">Edit User</h2>
+                
                     
-                    <td>{{item[0]}}</td>
-                    <td>{{item[1]}}</td>
-                    <td>{{item[2]}}</td>
-                    <td>{{item[3]}}</td>
-                    <td>{{item[4]}}</td>
-                    <td>{{item[5]}}</td>
-                    <td>{{item[6]}}</td>
-                    <td>{{item[7]}}</td>
-
+                    {% for i in row%}
+                    <!--input name="nombre" value="{{i[0]}}"></input-->
+                    
+                    
+                    <td>Nombre<input type="text" name="nombre" class="form-control" value="{{i[0]}}"></td>
+                    
+                    <td>Apellido<input type="text" name="apellido" class="form-control" value="{{i[1]}}"></td>
+                    
+                    <td>tipo_evento<input type="text" name="tipo_evento" class="form-control" value="{{i[2]}}"></td>
+                    
+                    <td>contacto<input type="text" name="contacto" class="form-control" value="{{i[3]}}"></td>
+                    
+                    <td>direccion<input type="text" name="direccion" class="form-control" value="{{i[4]}}"></td>
+                    
+                    <td>email<input type="text" name="email" class="form-control" value="{{i[5]}}"></td>
+                    
+                    <td>fecha<input type="text" name="fecha" class="form-control" value="{{i[6]}}"></td>
+                    
+                    <td>hora<input type="text" name="hora" class="form-control" value="{{i[7]}}"></td>
+                    
                     {% endfor %}
-                </tr>
+                    <br>
+                    <button type="submit" class="btn btn-success text-center">Guardar</button>
+                   
+
+                    
                 
-                
-                </tbody>
-            </table>
+            
 
 
-
-          <div class="position-absolute top-50 start-50" >
-           <a href="/editUser.html" type="button" class="btn btn-primary">Modificar</a>
-          </div>
           
 
         </div>
