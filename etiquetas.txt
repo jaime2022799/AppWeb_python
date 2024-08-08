@@ -1074,3 +1074,35 @@ def signup():
     cookie_value = request.cookies.get("cookie_app")
 
     return render_template('/login.html')
+
+def post_data():
+
+def login_registro():
+
+    #VARIABLES
+    fecha = date.today()
+    fechaHora = datetime.now()
+    time = fechaHora.strftime("%H:%M:%S")
+
+    if request.method == "POST":
+        email = request.form['email']
+        clave = request.form['clave']
+       
+
+        execute = """
+        INSERT INTO LOGIN (EMAIL,CLAVE,FECHA,HORA) 
+        VALUES (:email,:clave,:fecha,:time)
+        """
+        
+        cursor.execute(execute, {'email':email, 'clave':clave,'fecha':fecha,'time':time})
+       
+        app_models_oracle.connection.commit()
+       
+        
+        #return render_template('/index.html')
+        #return redirect(url_for('/home'))
+    else:
+        return "404 request", 400
+    
+    return render_template('/index.html'), 200
+    
