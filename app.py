@@ -97,6 +97,12 @@ def modulo_cotizador():
     return render_template('/modulo_cotizador.html')
 
 
+@app.route('/adminDashboard.html')
+def adminDash():
+
+    return render_template('/adminDashboard.html')
+
+
 cursor = app_models_oracle.connection.cursor()
 
 
@@ -145,7 +151,7 @@ def pag_formulario_administrativo():
 
 if __name__ == '__main__':
     app.debug = True
-    app.run(host= '0.0.0.0', port=5000)
+    app.run(host="localhost", port=5000)
     
    
 

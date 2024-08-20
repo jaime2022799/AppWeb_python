@@ -65,8 +65,9 @@
                   </button>
                   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                      <a id="link" class="navbar-brand" aria-current="page" href="http://localhost:5000/dashboard.html">Dashboard</a>
                       <a id="link" class="navbar-brand" href="#">Nosotros</a>
+                      <a id="link" class="navbar-brand" aria-current="page" href="http://localhost:5000/dashboard.html">Portal_Cotizadores</a>
+                      <a id="link" class="navbar-brand" href="http://localhost:5000/adminDashboard.html">Portal_Admin</a>
                       <a id="link" class="navbar-brand" href="http://localhost:5000/portalPago.html">PortalFactura</a>
                       <a id="link" class="navbar-brand" href="#">Contacto</a>
                     </div>
@@ -179,67 +180,46 @@
         </div>
 
         <div class="box">
-            <h3 class="btn btn-dark" style="width: 15%; position: relative; bottom: 50px; margin-left: 37%; right: 20px;">Funcionalidades</h3>
+            <h3 class="btn btn-dark" style="width: 15%; position: relative; bottom: 50px; margin-left: 40%;">Funcionalidades</h3>
             <div id="accordion">
-                <h3 class="btn btn-dark">Section 1</h3>
+                <h3 class="btn btn-dark">Usabilidad</h3>
                 <div>
                   <p style="font-size: 20px;">
-                  Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
-                  ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
-                  amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
-                  odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
-                  </p>
-                </div>
-                <h3 class="btn btn-dark">Section 2</h3>
-                <div>
-                  <p style="font-size: 20px;">
-                  Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
-                  purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
-                  velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
-                  suscipit faucibus urna.
-                  </p>
-                </div>
-                <h3 class="btn btn-dark">Section 3</h3>
-                <div>
-                  <p style="font-size: 20px;">
-                  Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
-                  Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
-                  ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
-                  lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+                   Nuestra interfaz es fundamental en el proceso de la trasnformacion difital 
+                   nos dedicamos a desarrollar y implementar mejoras de software que puedan satisfacer a los clientes.
                   </p>
                   <ul style="font-size: 20px;">
-                    <li>List item one</li>
-                    <li>List item two</li>
-                    <li>List item three</li>
+                    <li>App Web</li>
+                    <li>Api Rest</li>
+                    <li>Mantenedores Web</li>
                   </ul>
                 </div>
-                <h3 class="btn btn-dark">Section 4</h3>
+                <h3 class="btn btn-dark">Seguridad</h3>
                 <div>
                   <p style="font-size: 20px;">
-                  Cras dictum. Pellentesque habitant morbi tristique senectus et netus
-                  et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
-                  faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
-                  mauris vel est.
-                  </p>
-                  <p style="font-size: 20px;">
-                  Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
-                  Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-                  inceptos himenaeos.
+                   Ofrecemos proteccion y invulnerabilidad  a los datos establecidos en nuestros Modulos, proporcionamos un sistema seguro de acceso y reestablecimiento de contraseñas, otorgar protección sobre los datos y la información facilitada por el usuario.
                   </p>
                 </div>
-                <h3 class="btn btn-dark">Section 5</h3>
+                <h3 class="btn btn-dark">Geolocalización</h3>
                 <div>
                   <p style="font-size: 20px;">
-                  Cras dictum. Pellentesque habitant morbi tristique senectus et netus
-                  et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
-                  faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
-                  mauris vel est.
+                 Establecemos una Geolocalización que no solo obtenemos un mayor conocimiento del usuario ademas nuestro negocio local nos permite conseguir gran eficacia sobre nuestro objetivo.
                   </p>
+                </div>
+                <h3 class="btn btn-dark">Conexion Oracle</h3>
+                <div>
                   <p style="font-size: 20px;">
-                  Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
-                  Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-                  inceptos himenaeos.
+                 Nuestra App esta conectada con un Servidor de Bases de datos Oracle.
                   </p>
+                 
+                </div>
+                <h3 class="btn btn-dark">Interaccion Contacto</h3>
+                <div>
+                  <p style="font-size: 20px;">
+                  Establecemos un Modulo de contacto en donde se puede Interactuar de manera simple y efizas con nuestros clientes 
+                  debido a nuestro formulario.
+                  </p>
+                  
                 </div>
               </div>
 
@@ -271,129 +251,27 @@
             <script src="{{ url_for('static', filename='script/chart.js') }}"></script>
       
             
-            
-            <!--div class="progress" role="progressbar" aria-label="Default striped example" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar progress-bar-striped" style="width: 10%"></div>
-              </div>
-              <div class="progress" role="progressbar" aria-label="Success striped example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar progress-bar-striped bg-success" style="width: 25%"></div>
-              </div>
-              <div class="progress" role="progressbar" aria-label="Info striped example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar progress-bar-striped bg-info" style="width: 50%"></div>
-              </div>
-              <div class="progress" role="progressbar" aria-label="Warning striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar progress-bar-striped bg-warning" style="width: 75%"></div>
-              </div>
-              <div class="progress" role="progressbar" aria-label="Danger striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar progress-bar-striped bg-danger" style="width: 100%"></div>
-              </div-->
         </div>
 
-        
-        <!--div class="contenedor_carusel">
-            <div class="carousel">
-             <h2>Carrusel de Imagenes</h2>
-                <div class="slick-list" id="slick-list">
-                    <button class="slick-arrow slick-prev" id="buttom-prev">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
-                    </button>
-                  <div class="slick-track" id="track">
-                    <div class="slick">
-                        <div>
-                            <a href="/"></a>
-                            <h4><small>Photo 1</small></h4>
-                            <picture>
-                                <img src="/static/img/carusel8.png" alt="Image">
-                            </picture>
-                        </div>
-                    </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/"></a>
-                            <h4><small>Photo 2</small></h4>
-                            <picture>
-                                <img src="/static/img/carusel8.png" alt="Image">
-                            </picture>
-                        </div>
-                    </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/"></a>
-                            <h4><small>Photo 3</small></h4>
-                            <picture>
-                                <img src="/static/img/carusel8.png" alt="Image">
-                            </picture>
-                        </div>
-                    </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/"></a>
-                            <h4><small>Photo 4</small></h4>
-                            <picture>
-                                <img src="/static/img/carusel8.png" alt="Image">
-                            </picture>
-                        </div>
-                    </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/"></a>
-                            <h4><small>Photo 5</small></h4>
-                            <picture>
-                                <img src="/static/img/carusel8.png" alt="Image">
-                            </picture>
-                        </div>
-                    </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/"></a>
-                            <h4><small>Photo 6</small></h4>
-                            <picture>
-                                <img src="/static/img/carusel8.png" alt="Image">
-                            </picture>
-                        </div>
-                    </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/"></a>
-                            <h4><small>Photo 7</small></h4>
-                            <picture>
-                                <img src="/static/img/carusel8.png" alt="Image">
-                            </picture>
-                        </div>
-                    </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/"></a>
-                            <h4><small>Photo 8</small></h4>
-                            <picture>
-                                <img src="/static/img/carusel8.png" alt="Image">
-                            </picture>
-                        </div>
-                    </div>
-                  </div>
-                  <button class="slick-arrow slick-next" id="buttom-next">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
-                  </button>
-                </div>
-            </div>
-        </div-->
-     
-
+    
    <div class="contenedor_carusel">
         <div class="carusel">
-            <h2 class="texto">Carrusel de Imagenes</h2>
+            <h2 class="btn btn-dark" style="width: 15%; position: relative; top: 70px; margin-left: 720px;">Galeria de Eventos</h2>
           <div class="slick-list" id="slick-list">
             <button class="slick-arrow slick-prev"  id="button-prev">
                 <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
             </button>
             
             <div class="slick-track" id="track">
+
                 <div class="slick">
                     <div>
                         <a href="">
-                            <h4><small>Shared  your message</small>Watch</h4>
+                            <h4><small>
+                                Cliente: xxxxxxx
+                            </small>Evento Clasico</h4>
                             <picture>
-                                <img src="/static/img/carusel8.png" alt="Image">
+                                <img src="/static/img/evento.png" alt="Image">
                             </picture>
                         </a>
                     </div>
@@ -401,9 +279,11 @@
                 <div class="slick">
                     <div>
                         <a href="">
-                            <h4><small>Shared  your message</small>Watch</h4>
+                            <h4><small>
+                                Cliente: xxxxxxx
+                            </small>Evento Premiun</h4>
                             <picture>
-                                <img src="/static/img/carusel8.png" alt="Image">
+                                <img src="/static/img/evento.png" alt="Image">
                             </picture>
                         </a>
                     </div>
@@ -411,9 +291,11 @@
                 <div class="slick">
                     <div>
                         <a href="">
-                            <h4><small>Shared  your message</small>Watch</h4>
+                            <h4><small>
+                                Cliente: xxxxxxx
+                            </small>Evento Clasico</h4>
                             <picture>
-                                <img src="/static/img/carusel8.png" alt="Image">
+                                <img src="/static/img/evento.png" alt="Image">
                             </picture>
                         </a>
                     </div>
@@ -421,9 +303,11 @@
                 <div class="slick">
                     <div>
                         <a href="">
-                            <h4><small>Shared  your message</small>Watch</h4>
+                            <h4><small>
+                                Cliente: xxxxxxx
+                            </small>Evento Premiun</h4>
                             <picture>
-                                <img src="/static/img/carusel8.png" alt="Image">
+                                <img src="/static/img/evento.png" alt="Image">
                             </picture>
                         </a>
                     </div>
@@ -431,9 +315,11 @@
                 <div class="slick">
                     <div>
                         <a href="">
-                            <h4><small>Shared  your message</small>Watch</h4>
+                            <h4><small>
+                                Cliente: xxxxxxx
+                            </small>Evento Clasico</h4>
                             <picture>
-                                <img src="/static/img/carusel8.png" alt="Image">
+                                <img src="/static/img/evento.png" alt="Image">
                             </picture>
                         </a>
                     </div>
@@ -441,9 +327,11 @@
                 <div class="slick">
                     <div>
                         <a href="">
-                            <h4><small>Shared  your message</small></h4>
+                            <h4><small>
+                                Cliente: xxxxxxx
+                            </small>Evento Premiun</h4>
                             <picture>
-                                <img src="/static/img/carusel8.png" alt="Image">
+                                <img src="/static/img/evento.png" alt="Image">
                             </picture>
                         </a>
                     </div>
@@ -451,9 +339,11 @@
                 <div class="slick">
                     <div>
                         <a href="">
-                            <h4><small>Shared  your message</small></h4>
+                            <h4><small>
+                                Cliente: xxxxxxx
+                            </small>Evento Premiun</h4>
                             <picture>
-                                <img src="/static/img/carusel8.png" alt="Image">
+                                <img src="/static/img/evento.png" alt="Image">
                             </picture>
                         </a>
                     </div>
@@ -461,9 +351,11 @@
                 <div class="slick">
                     <div>
                         <a href="">
-                            <h4><small>Shared  your message</small></h4>
+                            <h4><small>
+                                Cliente: xxxxxxx
+                            </small>Evento Clasico</h4>
                             <picture>
-                                <img src="/static/img/carusel8.png" alt="Image">
+                                <img src="/static/img/evento.png" alt="Image">
                             </picture>
                         </a>
                     </div>
@@ -471,9 +363,11 @@
                 <div class="slick">
                     <div>
                         <a href="">
-                            <h4><small>Shared  your message</small></h4>
+                            <h4><small>
+                                Cliente: xxxxxxx
+                            </small>Evento Premiun</h4>
                             <picture>
-                                <img src="/static/img/carusel8.png" alt="Image">
+                                <img src="/static/img/evento.png" alt="Image">
                             </picture>
                         </a>
                     </div>
@@ -481,13 +375,15 @@
                 <div class="slick">
                     <div>
                         <a href="">
-                            <h4><small>Shared  your message</small></h4>
+                            <h4><small>
+                                Cliente: xxxxxxx
+                            </small>Evento Clasico</h4>
                             <picture>
-                                <img src="/static/img/carusel8.png" alt="Image">
+                                <img src="/static/img/evento.png" alt="Image">
                             </picture>
                         </a>
                     </div>
-                </div>  
+                </div>
 
             </div>
 
@@ -504,43 +400,64 @@
 
         <script src="{{ url_for('static', filename='script/imagenes.js') }}"></script>
 
-        <div class="formulario" id="formulario">
-            <h3 class="btn btn-dark" style="width: 20%; position: relative; top: 2%; margin-left: 37%;">Administrativo</h3>
+
+        <h3 class="btn btn-dark" style="width: 15%; position: relative; top: 70px; margin-right: 50px;">Contacto</h3>
             
+        <div class="formulario" id="formulario">
             
             
             <form  method="POST" action="formulario"  lang="es" class="form-contact">
 
                 <script src="{{ url_for('static', filename='script/enviarFormulario.js') }}" type="module"></script>
 
-                <label for="nombre">Nombre</label>
+                <svg fill="#1C2033" width="52" height="52" version="1.1" id="lni_lni-user" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                y="0px" viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
+                <g>
+                    <path d="M32,36.8c8.3,0,15-6.7,15-15s-6.7-15-15-15c-8.3,0-15,6.7-15,15S23.7,36.8,32,36.8z M32,11.3c5.8,0,10.5,4.7,10.5,10.5
+                        S37.8,32.3,32,32.3c-5.8,0-10.5-4.7-10.5-10.5S26.2,11.3,32,11.3z"/>
+                    <path d="M61.5,53.2C53.3,46.3,42.9,42.5,32,42.5S10.7,46.3,2.5,53.2c-0.9,0.8-1.1,2.2-0.3,3.2c0.8,0.9,2.2,1.1,3.2,0.3
+                        C12.8,50.4,22.2,47,32,47c9.8,0,19.2,3.4,26.5,9.6c0.4,0.4,0.9,0.5,1.5,0.5c0.6,0,1.3-0.3,1.7-0.8C62.5,55.4,62.4,54,61.5,53.2z"/>
+                </g>
+                </svg>
                 <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Ingrese su Nombre">
                 <br>
-                <label for="apellido">Apellido</label>
+                <br>
+                <svg fill="#1C2033" width="52" height="52" version="1.1" id="lni_lni-user" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                y="0px" viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
+                <g>
+                    <path d="M32,36.8c8.3,0,15-6.7,15-15s-6.7-15-15-15c-8.3,0-15,6.7-15,15S23.7,36.8,32,36.8z M32,11.3c5.8,0,10.5,4.7,10.5,10.5
+                        S37.8,32.3,32,32.3c-5.8,0-10.5-4.7-10.5-10.5S26.2,11.3,32,11.3z"/>
+                    <path d="M61.5,53.2C53.3,46.3,42.9,42.5,32,42.5S10.7,46.3,2.5,53.2c-0.9,0.8-1.1,2.2-0.3,3.2c0.8,0.9,2.2,1.1,3.2,0.3
+                        C12.8,50.4,22.2,47,32,47c9.8,0,19.2,3.4,26.5,9.6c0.4,0.4,0.9,0.5,1.5,0.5c0.6,0,1.3-0.3,1.7-0.8C62.5,55.4,62.4,54,61.5,53.2z"/>
+                </g>
+                </svg>
                 <input type="text" name="apellido" id="apellido" class="form-control" placeholder="Ingrese su Apellido">
                 <br>
-                <label for="tipo_evento">Tipo Evento</label>
-                <input type="text" name="tipo_evento" id="tipo_evento" class="form-control" placeholder="Ingrese su Apellido">
                 <br>
-                <!--select name="tipo_evento" id="tipo_evento" class="form-control"
-                    placeholder="Ingrese su Tipo de solicitud">
-                    <option value="Curso" id="curso">Evento Simple</option>
-                    <option value="Consulta" id="matrimonio">Evento Premiun</option>
-                    <option value="Reclamo" id="cumpleaños">Evento Personalizado</option>
-                    <option value="Reclamo" id="cumpleaños">Evento Gold</option>
-
-                </select-->
-                <label for="celular">Contacto Movil o Hogar</label>
+                <svg fill="#1C2033" width="52" height="52" viewBox="0 0 512 512">
+                 <path d="M512 416c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96C0 60.7 28.7 32 64 32l128 0c20.1 0 39.1 9.5 51.2 25.6l19.2 25.6c6 8.1 15.5 12.8 25.6 12.8l160 0c35.3 0 64 28.7 64 64l0 256zM232 376c0 13.3 10.7 24 24 24s24-10.7 24-24l0-64 64 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-64 0 0-64c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 64-64 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l64 0 0 64z"/>
+                </svg>
+                <input type="text" name="tipo_evento" id="tipo_evento" class="form-control" placeholder="Ingrese su Tipo de evento">
+                <br>
+                <br>
+                <svg fill="#1C2033" width="52" height="52" viewBox="0 0 384 512">
+                <path d="M80 0C44.7 0 16 28.7 16 64l0 384c0 35.3 28.7 64 64 64l224 0c35.3 0 64-28.7 64-64l0-384c0-35.3-28.7-64-64-64L80 0zm80 432l64 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-64 0c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/>
+                </svg>
                 <input type="text" name="contacto" id="Contacto" class="form-control" placeholder="Ingrese su celular">
                 <br>
-                <label for="direccion">Direccion</label>
+                <svg fill="#1C2033" width="52" height="52" viewBox="0 0 512 512">
+                <path d="M320 64A64 64 0 1 0 192 64a64 64 0 1 0 128 0zm-96 96c-35.3 0-64 28.7-64 64l0 48c0 17.7 14.3 32 32 32l1.8 0 11.1 99.5c1.8 16.2 15.5 28.5 31.8 28.5l38.7 0c16.3 0 30-12.3 31.8-28.5L318.2 304l1.8 0c17.7 0 32-14.3 32-32l0-48c0-35.3-28.7-64-64-64l-64 0zM132.3 394.2c13-2.4 21.7-14.9 19.3-27.9s-14.9-21.7-27.9-19.3c-32.4 5.9-60.9 14.2-82 24.8c-10.5 5.3-20.3 11.7-27.8 19.6C6.4 399.5 0 410.5 0 424c0 21.4 15.5 36.1 29.1 45c14.7 9.6 34.3 17.3 56.4 23.4C130.2 504.7 190.4 512 256 512s125.8-7.3 170.4-19.6c22.1-6.1 41.8-13.8 56.4-23.4c13.7-8.9 29.1-23.6 29.1-45c0-13.5-6.4-24.5-14-32.6c-7.5-7.9-17.3-14.3-27.8-19.6c-21-10.6-49.5-18.9-82-24.8c-13-2.4-25.5 6.3-27.9 19.3s6.3 25.5 19.3 27.9c30.2 5.5 53.7 12.8 69 20.5c3.2 1.6 5.8 3.1 7.9 4.5c3.6 2.4 3.6 7.2 0 9.6c-8.8 5.7-23.1 11.8-43 17.3C374.3 457 318.5 464 256 464s-118.3-7-157.7-17.9c-19.9-5.5-34.2-11.6-43-17.3c-3.6-2.4-3.6-7.2 0-9.6c2.1-1.4 4.8-2.9 7.9-4.5c15.3-7.7 38.8-14.9 69-20.5z"/>
+                </svg>
                 <input type="text" name="direccion" id="direccion" class="form-control"
                     placeholder="Ingrese su direccion">
                 <br>
-                <label for="Correo">Email</label>
+                <br>
+                <svg fill="#1C2033" width="52" height="52" viewBox="0 0 512 512">
+                <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/>
+                </svg>
                 <input type="email" name="email" id="Email" value="@gmail.com" class="form-control" placeholder="Ingrese su Email">
                 <br>
-                <!--button type="submit" id="enviarFormulario" class="btn btn-primary" style="width: 15%; position: relative; bottom: 7%;">Enviar</button-->
+                <br>
                 <input id="submit" type="submit" class="btn btn-primary" style="width: 15%; position: relative; bottom: 7%;">
                 
                 <input type="hidden" name="_next" value="http://127.0.0.1:5000">
@@ -553,35 +470,34 @@
         </div>
 
 
-        <div class="tabla" style="height: 600px;  position: relative; top: 170px; width: 100%;"> 
-            <h3 class="btn btn-dark" style="width: 15%; position: relative; top: 25%; margin-left: 37%; left: 60px;">Equipo</h3>
-                <table class="table table-dark table-hover" style="position: relative; top: 200px; width: 1100px; margin-left: 300px; left: 20px; ">
-                    <thead>
-                      <tr">
-                        <th scope="col">id</th>
+        <div class="tabla" style="height: 900px;  position: relative; top: 170px; width: 100%;"> 
+            <h3 class="btn btn-dark" style="width: 15%; position: relative; top: 15%; margin-left: 37%; left: 60px;">Equipo</h3>
+                
+            <table class="table table-bordered table-hover" style="position: relative; top: 250px; width: 1100px; margin-left: 300px; left: 20px; ">
+                    <thead class="thead-dark">
+                      <tr>
                         <th scope="col">Nombre</th>
                         <th scope="col">Apellido</th>
                         <th scope="col">Email</th>
+                        <th scope="col">Cargo</th>
+                        <th scope="col">Descripcion</th>
                       </tr>
                     </thead>
                     <tbody class="table-group-divider">
                         <tr>
-                          <th scope="row">0SDW1</th>
                           <td>Jaime</td>
                           <td>Retamal</td>
                           <td>jaim.retamal@duoc.uc.cl</td>
+                          <td>Analista Programador </td>
+                          <td>Responsable de la funcionalidad y programacion de la app web</td>
                         </tr>
+                        
                         <tr>
-                          <th scope="row">0SDW2</th>
-                          <td>Jorge</td>
-                          <td>Heinz</td>
-                          <td>jorgeheise.2.0@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">0SDW3</th>
                             <td>daniel</td>
                             <td>mendoza</td>
                             <td>danielmendoza@gmail.com</td>
+                            <td>Ingeniero software</td>
+                            <td>Responsable de la funcionalidad y programacion de la app web</td>
                         </tr>
                         
                     </tbody>
@@ -593,21 +509,8 @@
 
 
             <div class="centrado">
-                <div class="tipo">
-                    <div class="contenedor_img">
-                        <img src="{{ url_for('static',filename='img/tipo2.JPG') }}" alt="">
-                    </div>
-                    <h4>EVENTO</h4>
-                </div>
 
-
-                <div class="tipo">
-                    <div class="contenedor_img">
-                        <img src="{{ url_for('static',filename='img/tipo2.JPG') }}" alt="">
-                    </div>
-                    <h4>EVENTO</h4>
-                </div>
-
+                
                 <div class="tipo">
                     <div class="contenedor_img">
                         <img src="{{ url_for('static',filename='img/tipo2.JPG') }}" alt="">
@@ -642,7 +545,6 @@
                     </div>
                     <h4>EVENTO</h4>
                 </div>
-
                 <div class="tipo">
                     <div class="contenedor_img">
                         <img src="{{ url_for('static',filename='img/tipo2.JPG') }}" alt="">
