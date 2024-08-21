@@ -186,7 +186,7 @@
   #Quienes{
     position: relative;
     margin-right: 70px;
-    top: 2px;
+    bottom: 20px;
   }
 
   #Quienes1{
@@ -201,14 +201,13 @@
   .fondo .habitacion .contenido .targeta {
     width: 550px;
     height: 400px;
-    background-color: #FFFFFF;
+    background-color: #22222b;
     display: grid;
     grid-template-columns: 1fr 1fr;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     overflow: hidden;
     transition: 0.3s;
-    border: 10px solid #FFFFFF ;
     padding: 10px;
   }
 
@@ -230,18 +229,16 @@
   
   .fondo .habitacion .contenido .simple__estructura > p {
     font-size: 25px;
-    color: lightslategrey;
-    border: solid 1px snow;
+    color: #F0F0F0;
     border-radius: 10px;
     padding: .5rem 1rem;
     margin-bottom: 1rem;
   }
 
   .fondo .habitacion .contenido .simple__img {
-    background-image: url("img/logo2.JPG");
+    background-image: url("img/quienes.png");
     background-size: cover;
     background-position: center;
-    border: 3px solid snow;
     margin-left: 100px;
   }
 
@@ -659,7 +656,7 @@ position:relative;
 
 
 .conten_mision{
-  height: 700px;
+  height: 800px;
   width: 100%;
   border: 1px solid black;
 }
