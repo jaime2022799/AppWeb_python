@@ -846,6 +846,7 @@ position:relative;
   border-radius: 5px;
   overflow: hidden;
   transition: 0.3s;
+  border: 5px solid #fff ;
  
 }
 
@@ -863,9 +864,9 @@ position:relative;
 }
 
 .contenedor_texto {
-  background-color: white;
-  width: 650px;
-  height: 280px;
+  background-color: #22222b;
+  width: 600px;
+  height: 260px;
   position: relative;
   margin-left: 250px;
   bottom: 420px;
@@ -873,16 +874,17 @@ position:relative;
   border-radius: 5px;
   overflow: hidden;
   transition: 0.3s;
-  border: 10px solid snow ;
+  border: 5px solid #fff ;
 }
 
 .texto_letra{
   width: 500px;
   position: relative;
   margin-left: 20px;
-  font-size: 40px;
-  top: 40px;
+  font-size: 35px;
+  top: 10px;
   font-family: 'Optima';
+  color: #F0F0F0;
 }
 
 .contenedor_texto:hover {
