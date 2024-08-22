@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
   }
   
   header {
@@ -11,6 +12,7 @@
     background-color: #22222b;
     position: sticky;
     top: 0;
+    
   }
 
 
@@ -680,10 +682,31 @@ position:relative;
   top: 120px;
 }
 
+
 .container_slider {
+  position: relative;
+  width: 100%;
+  height: 750px;
+  
+  /*
   width: 1798px;
   height: 700px;
+  */
+}
+
+
+video{
+  position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+  object-fit: cover;
   
+}
+
+.bx-wrapper{
+  height: 700px;
 }
 
 .chart {
