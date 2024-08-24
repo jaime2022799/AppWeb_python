@@ -11,6 +11,10 @@ import app_notifPush
 from flask import make_response 
 import app_models_oracle 
 from app_controllers import *
+import app_security_plsql
+
+
+
 #hex_key_sec = "3d94d4e88fd24a7f8da5aa719b663a43"
 #app.config["SECRET_KEY"] = hex_key_sec
 #TBAR = DebugToolbarExtension(app)
@@ -109,13 +113,13 @@ cursor = app_models_oracle.connection.cursor()
 @app.route('/index.html', methods=["POST"])
 def login():
     return render_template('/index.html', miLogin = login_registro()), 200
-
+    #MiProcedure = procedure_login()
 
 @app.route('/login.html', methods=['POST'])
 def signup_reg():
         
     return render_template('/login.html', miSignup = signup_registro()), 200
-
+    #MiProcedure2 = procedure_signup 
 
 
 @app.route('/modulo_cotizador.html', methods=["POST"])
@@ -146,7 +150,7 @@ def pago():
 def pag_formulario_administrativo():
     
     return render_template('/index.html', miFormulario = formulario_registro()) , 200
-
+    #Miformulario = procedure_formulario()
     
 
 if __name__ == '__main__':
