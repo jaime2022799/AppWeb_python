@@ -1,5 +1,5 @@
 from flask import Flask , flash, render_template  , request ,jsonify , redirect, url_for
-from flask_debugtoolbar import DebugToolbarExtension
+#from flask_debugtoolbar import DebugToolbarExtension
 from fileinput import filename 
 import cx_Oracle 
 import os
@@ -7,7 +7,7 @@ from datetime import date , datetime
 from werkzeug.utils import secure_filename
 import requests
 import json
-import app_notifPush 
+#import app_notifPush 
 from flask import make_response 
 import app_models_oracle 
 from app_controllers import *
@@ -27,6 +27,9 @@ def get_by_id(cls, id):
 
     return cls.query.filter(cls.id == id).first()
 
+@app.route('/presupuesto.html')
+def presupuesto():
+    return render_template('/presupuesto.html')
 
 
 @app.route('/login.html')

@@ -20,7 +20,7 @@ submit.addEventListener("submit", (e)=> {
             <br>
             <b>Apellido: </b>${apellido.value}
             <br>
-            <b>tipoEvento: </b>${tipo_evento.value}
+            <b>Tipo_solicitud: </b>${tipo_evento.value}
             <br>
             <b>Contacto: </b>${contacto.value}
             <br>
@@ -32,7 +32,7 @@ submit.addEventListener("submit", (e)=> {
             `
 
     Email.send({
-        SecureToken : "a6d0a20e-d612-498b-82a6-23a6a2203efc",
+        SecureToken : "e3f85831-303d-4309-a248-d30c3b550ad8",
         To : 'jaimeretamal47@gmail.com',
         From : "jaimeretamal47@gmail.com",
         Subject : "Cotizacion formulario 2024" ,

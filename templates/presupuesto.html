@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+            
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+
+
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: var(--light);
+        font-family: "poppins", sans-serif;
+    }
+
+    .container {
+        max-width: 1280px;
+        width: 100%;
+        margin: 0 auto;
+        background-color: var(--grey);
+        border-radius: 5px;
+        box-shadow: 5px 5px 10px #000;
+        overflow-x: hidden;
+    }
+
+    .container h2 {
+        padding: 1rem 0;
+        font-size: 4rem;
+        text-align: center;
+        color: var(--dark);
+    }
+
+     
+    .error_message {
+        background-color: darkgray;
+        color: var(--light);
+        text-align: center;
+        padding: 1rem 0;
+        width: 650px;
+        margin: 0 auto;
+        border-radius: 5px;
+        display: none;
+
+    }
+
+    .error_message.error{
+        display: block;
+        transition: all 0.8s ease-in;
+    }
+
+    .budget_content {
+        padding: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+        
+    }
+
+    .ur_budget form input, .ur_expenses form input{
+        padding: 0.4rem 1rem;
+        width: 300px;
+        border: 1px solid #ddd;
+        font-family: inherit 0.5rem;
+        font-size: 1rem;
+        margin-left: 0.5rem;
+        border-radius: 3px;
+    }
+    .ur_budget form input:focus,
+    .ur_expenses form input:focus {
+        outline: none;
+    }
+
+    .ur_budget form,
+    .ur_expenses form {
+        position: relative;
+    }
+
+    .budget_content .btn {
+        position: absolute;
+        right: 0;
+        outline: none;
+        border: none;
+        font-family: inherit;
+        padding: 0.6rem 1rem;
+        color: lightgrey;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        cursor: pointer;
+        background-color: #000;
+    }
+
+    .budget_content .btn:active {
+        transform: scale(0.98);
+    }
+
+    .container .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(240px, 1fr));
+        grid-gap: 1.5rem;
+        padding: 2rem;
+
+    }
+
+    .container .cards li {
+        padding: 1.8rem;
+        background-color: darkgrey;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        cursor: pointer;
+        transition: all 0.3s ease-in;
+    }
+
+    .container .cards li:hover{
+        transform: translate(-10px);
+    }
+
+    .container .cards li .bx {
+        width: 5.5rem;
+        height: 5.5rem;
+        border-radius: 10px;
+        font-size: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+    }
+
+    .container .cards li:nth-child(1) .bx{
+       
+        color: darkblue;
+
+    }
+    .container .cards li:nth-child(2) .bx{
+       
+       color: darkgoldenrod;
+
+   }
+   .container .cards li:nth-child(3) .bx{
+       
+       color: darkgreen;
+
+   }
+
+   .container .cards li .info h3  {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #000;
+   }
+   .container .cards li .info p{
+    color: #000;
+
+   }
+
+   .tbl_content {
+    padding: 2rem;
+    background-color: lightgray;
+    margin: 1rem 2rem;
+    border-radius: 5px;
+   }
+
+   .tbl_content h3 {
+    font-size: 2rem;
+    margin: 1rem 0;
+   }
+
+   .tbl_tr_content {
+    display: grid;
+    list-style-type: none;
+    grid-template-columns: 1fr 50% 30% 2fr;
+    align-items: center;
+    background-color: #000;
+    color: #ddd;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+   }
+
+   .tbl_data {
+    overflow-y: auto;
+    height: 150px;
+   }
+   .tbl_tr_content button {
+    outline: none;
+    border: none;
+    color: #ddd;
+    padding: 0.4rem;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: darkred;
+   }
+
+   .tbl_tr_content button:active {
+    transform: scale(0.98);
+   }
+
+   .tbl_tr_content button:first-child {
+    
+    background-color: darkgreen;
+   }
+   
+    </style>
+
+   
+    <title>Presupuesto contable</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Presupuesto modulo</h2>
+        <div class="error_message">Por favor presione importe presupuesto | Mas de 0</div>
+    
+        <div class="budget_content">
+            <div class="ur_budget">
+                <form action="">
+                    <label for="budget">Su Presupuesto</label>
+                    <input type="number" placeholder="Presione Su presupuesto" class="budget_input">
+                    <button class="btn" id="btn_budget">Calcular</button>
+                </form>
+            </div>
+            <div class="ur_expenses">
+                <form action="">
+                    <label for="expenses">Detalle de Gastos</label>
+                    <input type="number" placeholder="indicar Sus Gastos descripcion" class="expenses_input">
+                    <input type="number" placeholder="indicar Sus Gastos importe" class="expenses_amount">
+                    <button class="btn" id="btn_expenses">Agregar Presupuesto</button>
+                </form>
+            </div>
+        </div>
+
+        <!--cards start -->
+        <ul class="cards">
+            <li>
+                <i class="bx bx-money">
+                    <span class="info">
+                        <h3><span>$</span><span class="budget_card">10,000</span></h3>
+                        <p>Presupuesto</p>
+                    </span>
+                </i>
+            </li>
+            <li>
+                <i class="bx bx-credit-card">
+                    <span class="info">
+                        <h3><span>$</span><span class="expenses_card">12,000</span></h3>
+                        <p>Gastos</p>
+                    </span>
+                </i>
+            </li>
+            <li>
+                <i class="bx bx-dollar">
+                    <span class="info">
+                        <h3><span>$</span><span class="balance_card">12,000</span></h3>
+                        <p>Balance</p>
+                    </span>
+                </i>
+            </li>
+        </ul>
+
+        <!--cards start -->
+        <div class="tbl_content">
+            <h3>Presupuesto Detalle</h3>
+            <div class="tbl_data">
+                <ul class="tbl_tr_content">
+                    <li>1</li>
+                    <li>Raton Juegos</li>
+                    <li><span>$</span>600</li>
+                    <li>
+                        <button type="button" class="btn_edit">Editar</button>
+                        <button type="button" class="btn_delete">Eliminar</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+   </div>
+    
+
+   <script src="{{ url_for('static', filename='script/presupuesto.js') }}"></script>
+</body>
+</html>
