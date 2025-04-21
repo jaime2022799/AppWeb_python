@@ -1,8 +1,6 @@
 const chatInput =  document.querySelector(".chat-input textarea");
 const sendChatBtn =  document.querySelector(".chat-input span");
-const chatbox =  document.querySelector(".chatbox");
-let userMessage;
-const API_URL = "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";
+//const API_URL = "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";
 
 
 const createChatLi = (message, className) => {
@@ -14,7 +12,7 @@ const createChatLi = (message, className) => {
 }
 
 const generateResponde = (incomingChatLi) => {
-    const API_URL = "https://api.openai.com/v1/chat/completions"
+    //const API_URL = "https://api.openai.com/v1/chat/completions"
     const messageElement = incomingChatLi.querySelector("p")
 
     const requestOptions = {
