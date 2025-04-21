@@ -76,9 +76,9 @@ def edit_formulario():
 
 
 
-@app.errorhandler(404)
-def page_not_found(error):
-    return render_template("Error404.html"), 404
+#@app.errorhandler(404)
+#def page_not_found(error):
+#    return render_template("Error404.html"), 404
 
 
 @app.route("/toolbar", methods=["GET"])
@@ -90,9 +90,6 @@ def DEB_EX():
 def portal():
     return render_template('/portalPago.html')
 
-@app.route('/index.html')
-def home():
-    return render_template('/index.html')
 
 
 @app.route('/dashboard.html')
@@ -154,12 +151,19 @@ def pag_formulario_administrativo():
     
     return render_template('/index.html', miFormulario = formulario_registro()) , 200
     #Miformulario = procedure_formulario()
-    
+
+@app.route('/', methods=["GET"])
+def home():
+    return render_template('/index.html')
+
+@app.route('/chatbot.html',methods=["GET"])
+def chatbot():
+    return render_template('/chatbot.html')
 
 if __name__ == '__main__':
-    app.debug = True
+    #app.debug = True
     app.run(host="localhost", port=5000)
-    
+   
    
 
     

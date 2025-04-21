@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='chatbot.css'  ) }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
+
+    <script src="/static/script/chatbot.js" defer></script>
+
+    <title>chatbot</title>
+</head>
+<body class="show-chatbot">
+    <button class="chatbot-toggler">
+        <span class="material-symbols-outlined">
+            mode_comment
+            </span>
+    </button>
+    <div class="chatbot">
+       <header>
+            <h2>Chatbot</h2>
+       </header>
+       <ul class="chatbox">
+            <li class="chat incoming">
+            <span class="material-symbols-outlined">
+            smart_toy
+            </span>
+            <p>Hi there <br> How can i help you today</p>
+            </li>
+            <li class="chat outgoing">
+             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit</p>
+            </li>
+        </ul>
+        <div class="chat-input">
+          <textarea id="miTextArea" placeholder="Escribe aquí"></textarea>
+          <span id="send-btn" class="material-symbols-outlined">send</span>
+        </div>
+    </div>
+    
+
+</body>
+</html>

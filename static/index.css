@@ -83,6 +83,11 @@
     
   }
 
+  header > nav #link_cotizador {
+    color: #F0F0F0;
+    margin-left: 55px;
+  }
+
 
   .fondo {
     background-color: #F7F7F7;
