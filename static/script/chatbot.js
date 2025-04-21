@@ -19,7 +19,7 @@ const generateResponde = (incomingChatLi) => {
         method: "POST",
         headers: {
             "Content-Type": "applications/json",
-            "Authorization": `Bearer ${API_URL}`
+            //"Authorization": `Bearer ${API_URL}`
         },
         body: JSON.stringify({
             model: "gpt-4.1",
