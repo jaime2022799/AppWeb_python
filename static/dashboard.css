@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.35s ease-in-out;
+    background-color: #fff;
+}
+
+#sidebar {
+    width: 90px;
+    min-width: 90px;
+    z-index: 1000;
+    transition: all .25s ease-in-out;
+    background-color: darkslategray;;
+    height: 850px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#sidebar.expand {
+    width: 260px;
+    min-width: 260px;
+}
+
+#toggle-btn {
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+    padding: 2rem 1.5rem;
+    
+}
+
+
+.sidebar-logo {
+    margin: auto 0;
+}
+
+.sidebar-logo a {
+    color: #FFF;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+#sidebar:not(.expand) .sidebar-logo,
+#sidebar:not(.expand) a.sidebar-link span {
+    display: none;
+}
+
+#sidebar.expand .sidebar-logo,
+#sidebar.expand a.sidebar-link span {
+    animation: fadeIn .25s ease;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.sidebar-nav {
+    padding: 2rem 0;
+    flex: 1 1 auto;
+}
+
+a.sidebar-link {
+    padding: .625rem 1.625rem;
+    color: #FFF;
+    display: block;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-link i,
+.dropdown-item i {
+    font-size: 1.1rem;
+    margin-right: .75rem;
+}
+
+a.sidebar-link:hover {
+    background-color: rgba(255, 255, 255, .075);
+    border-left: 3px solid darkslategray;;
+}
+
+.sidebar-item {
+    position: relative;
+}
+
+#sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
+    position: absolute;
+    top: 0;
+    left: 70px;
+    background-color: #0e2238;
+    padding: 0;
+    min-width: 15rem;
+    display: none;
+}
+
+#sidebar:not(.expand) .sidebar-item:hover .has-dropdown+.sidebar-dropdown {
+    display: block;
+    max-height: 15em;
+    width: 100%;
+    opacity: 1;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"]::after {
+    border: solid;
+    border-width: 0 .075rem .075rem 0;
+    content: "";
+    display: inline-block;
+    padding: 2px;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.4rem;
+    transform: rotate(-135deg);
+    transition: all .2s ease-out;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"].collapsed::after {
+    transform: rotate(45deg);
+    transition: all .2s ease-out;
+}
+
+.navbar {
+    background-color: #3b7ddd;
+    box-shadow: 0 0 2rem 0 rgba(33, 37, 41, .1);
+    
+}
+
+.contenedor {
+    background-color: #F7F7F7;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+}
+
+.header{
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    background-color: darkslategray;;
+
+}
+
+#contenedor_panel {
+    position: relative;
+    top: 100px;
+}
+
+.navbar-expand .navbar-collapse {
+    min-width: 200px;
+}
+
+.avatar {
+    height: 40px;
+    width: 40px;
+}
+
+tr.highlight th{
+    background-color: #293b52;
+    color: #fff;
+}
+
+.contabilidad {
+    width: 100%;
+    height: 750px;
+    position: relative;
+    top: 90px;
+    right: 650px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: 0.3s;
+    border: 2px solid #B4B1B1 ;
+  
+  }
+  .contabilidad:hover {
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  #exportar {
+    width: 15%; 
+    top: 500px; 
+    position: relative; 
+    left: 150px;
+    
+  }
+
+  #enviar{
+    width: 15%; 
+    height: 38px;
+    top: 425px;
+    position: relative; 
+    left: 30px;
+   
+  }
+
+  #tabla {
+    background-color: #B4B1B1;
+    position: relative;
+    top: 320px;
+    left: 220px;
+  }
+
+  .crud {
+    position: relative;
+    top: 90px;
+    left: 150px;
+  }
+
+  .botonExcel {
+    background-color: green;
+    position: relative;
+    top: 15px;
+  }
+
+  
+
+  
+
+
+
+@media (min-width: 768px) {}

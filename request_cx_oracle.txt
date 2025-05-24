@@ -1,0 +1,69 @@
+@app.route('/login.html', methods=['GET','POST'])
+def post_data():
+
+    fecha = date.today()
+    fechaHora = datetime.now()
+    time = fechaHora.strftime("%H:%M:%S")
+   
+
+    if request.method == 'POST':
+
+        nombre = request.form['nombre']
+        apellido = request.form['apellido']
+        email = request.form['email']
+        password_create = request.form['password_create']
+        password_confirm = request.form['password_confirm']
+
+
+        execute = """
+        INSERT INTO SIGNUP (EMAIL,CLAVE_NUEVA,CLAVE,FECHA,NOMBRE,APELLIDO,HORA) 
+        VALUES (:email,:password_create,:password_confirm,:fecha,:nombre,:apellido,:time)
+        """
+        
+        cursor.execute(execute, {'email':email, 'password_create':password_create, 'password_confirm':password_confirm, 'fecha':fecha, 'nombre':nombre, 'apellido':apellido, 'time':time})
+       
+        connection.commit()
+        
+        
+    else:
+        return redirect(url_for('login_registro'))
+
+
+
+#definimos la ruta de index para el registro de la cuenta creada pero en el login
+@app.route('/index.html', methods=["POST"])
+def login_registro():
+    if request.method == "POST":
+        email = request.form['email']
+        password = request.form['password']
+       
+        return render_template('/index.html')
+        #return render_template('/index.html')
+        #return redirect(url_for('/home'))
+    else:
+        return "404 request"
+
+
+cur = connection.cursor()
+cur.execute("SELECT * FROM SIGNUP WHERE HORA IS NOT NULL")
+for id_signup , email, clave_nueva , clave,fecha,nombre,apellido,hora in cur:
+    print("Campo: ", id_signup)
+    print("Campo: ", email)
+    print("Campo: ", clave_nueva)
+    print("Campo: ", clave)
+    print("Campo: ", fecha)
+    print("Campo: ", nombre)
+    print("Campo: ", apellido)
+    print("Campo: ", hora)
+
+@app.route('/login.html', methods=['GET'])
+def data():
+    cur = connection.cursor()
+    cur.execute('select * from signup')
+    rv = cur.fetchall()
+    #for row in rv:
+    #    print(rv)
+    cur.close
+
+    return redirect(url_for('post_data'))
+

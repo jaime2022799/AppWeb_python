@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>BlogEvents</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css'  ) }}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
+    
+    <script src= "https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/min/dropzone.min.js"> 
+    </script> 
+
+</head>
+
+<body>
+    
+    
+    <div class="container_slider">
+   
+
+        <video src="{{url_for('static', filename='img/istockphoto-1287601917-640_adpp_is.mp4')}}" autoplay loop muted controls></video>
+    
+            <!--div class="slide" style="text-align: center; width: 100%; opacity: 0.8; padding: 310px 50px; height: 90%; position: relative; background-size: cover; background-image: url('/static/img/tecnologia.png');">
+                <p style="font-size: 75px; font-family: 'Lucida Bright'; position: relative; bottom: 120px; color:  #E5E5F9 ;"> el cambio somos nosotros para la calidad de negocio</p>
+            </div>
+
+            <div class="slide1" style="text-align: center; width: 100%;  opacity: 0.8; padding: 310px 50px; height: 80%; position: relative; background-size: cover; background-image: url('/static/img/tecnologia.png');">
+                <p style="font-size: 75px; font-family: 'Lucida Bright'; position: relative; bottom: 120px; color: #E5E5F9 ;"> el cambio somos nosotros para la calidad de negocio</p>
+            </div-->
+
+    </div>
+
+    <div class="fondo">
+
+
+        <header class="header">  
+
+            <img src="" class="menu_logo" >
+            <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+
+                
+                <div class="container-fluid" style="justify-content: center;
+                margin-left: 75%; position: relative; top: 10%;">
+                  <a id="link" class="navbar-brand" href="http://localhost:5000/login.html">Login</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                      <!--a id="link" class="navbar-brand" href="http://localhost:5000/presupuesto.html">Presupuesto</a-->
+                      <a id="link" class="navbar-brand" href="#">Nosotros</a>
+                      <a id="link" class="navbar-brand" href="#">Nuestras Funcionalidades</a>
+                      <a id="link_cotizador" class="navbar-brand" aria-current="page" href="http://localhost:5000/dashboard.html">Portal_Cotizadores</a>
+                      <a id="link" class="navbar-brand" href="http://localhost:5000/adminDashboard.html">Portal_Admin</a>
+                      <a id="link" class="navbar-brand" aria-current="page" href="http://localhost:5000/chatbot.html">Chatbot</a>
+                      <a id="link" class="navbar-brand" href="http://localhost:5000/portalPago.html">PortalFactura</a>
+                      <a id="link" class="navbar-brand" href="#">Contacto</a>
+                      <a id="link" class="navbar-brand" href="#">Galeria</a>
+
+                    </div>
+                  </div>
+                </div>
+              </nav>
+    
+        </header>
+
+        <div class="contenedor_nosotros">
+        
+        <img src="{{url_for('static', filename='img/td.png')}}" class="img_nosotros">
+
+        <p class="letra">SDXC</p>
+
+        <div class="contenedor_texto">
+            <p class="texto_letra">Conoce Nuestra plataforma digital para multiples negocios ,
+             creemos en el futuro y en el cambio de la tranformacion digital.</p>
+        </div>
+
+
+        </div>
+
+    
+
+        <a  href="https://api.whatsapp.com/send?phone=931333274"><img class="icono" src="{{url_for('static', filename='img/whatsapp-fill.png')}}" style="position: relative;  width: 50px; height: 50px;">
+        </a>
+
+        <a href="https://www.instagram.com/"><img class="icono2" src="{{url_for('static', filename='img/instagram-fill.png')}}"></a>
+
+        <a href="https://twitter.com/?lang=es"><img class="icono3" src="{{url_for('static', filename='img/twitter-fill (2).png')}}"></a>
+
+        <a href="https://facebook.com/"><img class="icono4" src="{{url_for('static', filename='img/facebook-circle-fill.png')}}"></a>
+        
+
+
+        <div id="habitaciones" class="habitacion">
+            <a href="#" value="" id="Quienes" class="btn btn-dark">Quienes Somos</a>
+            
+        <div class="modal" id="ventanaModal" tabindex="-1" role="dialog" aria-labelledby="tituloVentana" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 id="tituloVentana">Informacion Eventos Web </h5>
+                        <button class="close" data-dismiss="modal" aria-label="Cerrar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="alert alert-success">
+                            <h4><strong></strong> Nosotros Entregamos un Servicio de Calidad Confiable y Seguro </h4>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button class="btn btn-warning" type="button" data-dismiss="modal">
+                            Cerrar
+                        </button>
+                        <button class="btn btn-success" type="button" data-dismiss="modal">
+                            Aceptar
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ventanaModal" style="width: 10%; position: relative; left: 35%;">
+                Informacion
+            </button>
+
+        
+        <div class="contenido">
+
+                <div class="targeta simple">
+                    <div class="simple__estructura">
+                        <p>Ofrecemos un servicio de plataforma digital  para distintos negocios empresariales
+                        </p>
+                        <div class="descripcion">
+
+
+                        </div>
+                    </div>
+                    <div class="simple__img">
+
+                    </div>
+                </div>
+        </div>
+
+        </div>
+
+        <div class="conten_mision">
+
+            <h3 class="btn btn-dark" style="width: 10%; position: relative; top: 7%; margin-left: 25%;">Mision</h3>
+            <div class="card" style="width: 25rem; position: relative; top: 80px; left: 350px; margin: 10px;">
+                <img src="{{url_for('static', filename='img/mision2024.png')}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text" style="font-size: 25px;">Ofrecemos servicio de una plataforma digital para la interaccion con el cliente para diferentes negocios , impulsamos lo mejor para lograr este objetivo y crear nuevos negocios para el futuro.</p>
+                </div>
+            </div>
+
+            <h3 class="btn btn-dark" style="width: 10%; position: relative; bottom: 73%; margin-left: 67%;">Vision</h3>
+            <div class="card" style="width: 25rem; position: relative; bottom: 550px; left: 1100px; margin: 10px;">
+                <img src="{{url_for('static', filename='img/vision.png')}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text" style="font-size: 25px;">Potenciar la creacion de servicios para la tranformacion digital para distintos negocios , facilitar el acceso de comunicacion con el cliente.</p>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="box">
+            <h3 class="btn btn-dark" style="width: 15%; position: relative; bottom: 50px; margin-left: 40%;">Funcionalidades</h3>
+            <div id="accordion">
+                <h3 class="btn btn-dark">Usabilidad</h3>
+                <div>
+                  <p style="font-size: 20px;">
+                   Nuestra interfaz es fundamental en el proceso de la trasnformacion difital 
+                   nos dedicamos a desarrollar y implementar mejoras de software que puedan satisfacer a los clientes.
+                  </p>
+                  <ul style="font-size: 20px;">
+                    <li>App Web</li>
+                    <li>Api Rest</li>
+                    <li>Mantenedores Web</li>
+                  </ul>
+                </div>
+                <h3 class="btn btn-dark">Seguridad</h3>
+                <div>
+                  <p style="font-size: 20px;">
+                   Ofrecemos proteccion y invulnerabilidad  a los datos establecidos en nuestros Modulos, proporcionamos un sistema seguro de acceso y reestablecimiento de contraseñas, otorgar protección sobre los datos y la información facilitada por el usuario.
+                  </p>
+                </div>
+                <h3 class="btn btn-dark">Geolocalización</h3>
+                <div>
+                  <p style="font-size: 20px;">
+                 Establecemos una Geolocalización que no solo obtenemos un mayor conocimiento del usuario ademas nuestro negocio local nos permite conseguir gran eficacia sobre nuestro objetivo.
+                  </p>
+                </div>
+                <h3 class="btn btn-dark">Conexion Oracle</h3>
+                <div>
+                  <p style="font-size: 20px;">
+                 Nuestra App esta conectada con un Servidor de Bases de datos Oracle.
+                  </p>
+                 
+                </div>
+                <h3 class="btn btn-dark">Interaccion Contacto</h3>
+                <div>
+                  <p style="font-size: 20px;">
+                  Establecemos un Modulo de contacto en donde se puede Interactuar de manera simple y efizas con nuestros clientes 
+                  debido a nuestro formulario.
+                  </p>
+                  
+                </div>
+              </div>
+
+              
+
+        </div>
+        
+        
+
+        <div class="container-progress">
+
+            
+            <button id="button" type="submit" class="btn btn-success" style="margin-left: 1400px; position: relative; top: 35px; width: 200px;" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Progreso
+            </button>
+
+            <script src="{{ url_for('static', filename='script/modal.js') }}"></script>
+            
+        
+            <div class="content">
+
+                <h1 class="chart">
+                    Estadistica Web
+                </h1>
+                <canvas id="grafico"></canvas>
+                
+                
+            </div>
+            <script src="{{ url_for('static', filename='script/chart.js') }}"></script>
+      
+            
+        </div>
+
+    
+   <div class="contenedor_carusel">
+        <div class="carusel">
+            <h2 class="btn btn-dark" style="width: 15%; position: relative; top: 70px; margin-left: 720px;">Galeria</h2>
+          <div class="slick-list" id="slick-list">
+            <button class="slick-arrow slick-prev"  id="button-prev">
+                <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+            </button>
+            
+            <div class="slick-track" id="track">
+
+                <div class="slick">
+                    <div>
+                        <a href="">
+                            <h4><small>
+                                Cliente: xxxxxxx
+                            </small></h4>
+                            <picture>
+                                <img src="/static/img/evento.png" alt="Image">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+                <div class="slick">
+                    <div>
+                        <a href="">
+                            <h4><small>
+                                Cliente: xxxxxxx
+                            </small></h4>
+                            <picture>
+                                <img src="/static/img/evento.png" alt="Image">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+                <div class="slick">
+                    <div>
+                        <a href="">
+                            <h4><small>
+                                Cliente: xxxxxxx
+                            </small></h4>
+                            <picture>
+                                <img src="/static/img/evento.png" alt="Image">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+                <div class="slick">
+                    <div>
+                        <a href="">
+                            <h4><small>
+                                Cliente: xxxxxxx
+                            </small></h4>
+                            <picture>
+                                <img src="/static/img/evento.png" alt="Image">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+                <div class="slick">
+                    <div>
+                        <a href="">
+                            <h4><small>
+                                Cliente: xxxxxxx
+                            </small></h4>
+                            <picture>
+                                <img src="/static/img/evento.png" alt="Image">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+                <div class="slick">
+                    <div>
+                        <a href="">
+                            <h4><small>
+                                Cliente: xxxxxxx
+                            </small></h4>
+                            <picture>
+                                <img src="/static/img/evento.png" alt="Image">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+                <div class="slick">
+                    <div>
+                        <a href="">
+                            <h4><small>
+                                Cliente: xxxxxxx
+                            </small></h4>
+                            <picture>
+                                <img src="/static/img/evento.png" alt="Image">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+                <div class="slick">
+                    <div>
+                        <a href="">
+                            <h4><small>
+                                Cliente: xxxxxxx
+                            </small></h4>
+                            <picture>
+                                <img src="/static/img/evento.png" alt="Image">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+                <div class="slick">
+                    <div>
+                        <a href="">
+                            <h4><small>
+                                Cliente: xxxxxxx
+                            </small></h4>
+                            <picture>
+                                <img src="/static/img/evento.png" alt="Image">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+                <div class="slick">
+                    <div>
+                        <a href="">
+                            <h4><small>
+                                Cliente: xxxxxxx
+                            </small></h4>
+                            <picture>
+                                <img src="/static/img/evento.png" alt="Image">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="slick-arrow slick-next"  id="button-next">
+                <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+            </button>
+
+          </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script/carrusel.js') }}"></script>
+
+
+        <script src="{{ url_for('static', filename='script/imagenes.js') }}"></script>
+
+
+        <h3 class="btn btn-dark" style="width: 15%; position: relative; top: 70px; margin-right: 50px;">Contacto</h3>
+            
+        <div class="formulario" id="formulario">
+            
+            
+            <form  method="POST" action="formulario"  lang="es" class="form-contact">
+
+                <script src="{{ url_for('static', filename='script/enviarFormulario.js') }}" type="module"></script>
+
+                <svg fill="#1C2033" width="52" height="52" version="1.1" id="lni_lni-user" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                y="0px" viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
+                <g>
+                    <path d="M32,36.8c8.3,0,15-6.7,15-15s-6.7-15-15-15c-8.3,0-15,6.7-15,15S23.7,36.8,32,36.8z M32,11.3c5.8,0,10.5,4.7,10.5,10.5
+                        S37.8,32.3,32,32.3c-5.8,0-10.5-4.7-10.5-10.5S26.2,11.3,32,11.3z"/>
+                    <path d="M61.5,53.2C53.3,46.3,42.9,42.5,32,42.5S10.7,46.3,2.5,53.2c-0.9,0.8-1.1,2.2-0.3,3.2c0.8,0.9,2.2,1.1,3.2,0.3
+                        C12.8,50.4,22.2,47,32,47c9.8,0,19.2,3.4,26.5,9.6c0.4,0.4,0.9,0.5,1.5,0.5c0.6,0,1.3-0.3,1.7-0.8C62.5,55.4,62.4,54,61.5,53.2z"/>
+                </g>
+                </svg>
+                <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Ingrese su Nombre">
+                <br>
+                <br>
+                <svg fill="#1C2033" width="52" height="52" version="1.1" id="lni_lni-user" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                y="0px" viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
+                <g>
+                    <path d="M32,36.8c8.3,0,15-6.7,15-15s-6.7-15-15-15c-8.3,0-15,6.7-15,15S23.7,36.8,32,36.8z M32,11.3c5.8,0,10.5,4.7,10.5,10.5
+                        S37.8,32.3,32,32.3c-5.8,0-10.5-4.7-10.5-10.5S26.2,11.3,32,11.3z"/>
+                    <path d="M61.5,53.2C53.3,46.3,42.9,42.5,32,42.5S10.7,46.3,2.5,53.2c-0.9,0.8-1.1,2.2-0.3,3.2c0.8,0.9,2.2,1.1,3.2,0.3
+                        C12.8,50.4,22.2,47,32,47c9.8,0,19.2,3.4,26.5,9.6c0.4,0.4,0.9,0.5,1.5,0.5c0.6,0,1.3-0.3,1.7-0.8C62.5,55.4,62.4,54,61.5,53.2z"/>
+                </g>
+                </svg>
+                <input type="text" name="apellido" id="apellido" class="form-control" placeholder="Ingrese su Apellido">
+                <br>
+                <br>
+                <svg fill="#1C2033" width="52" height="52" viewBox="0 0 512 512">
+                 <path d="M512 416c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96C0 60.7 28.7 32 64 32l128 0c20.1 0 39.1 9.5 51.2 25.6l19.2 25.6c6 8.1 15.5 12.8 25.6 12.8l160 0c35.3 0 64 28.7 64 64l0 256zM232 376c0 13.3 10.7 24 24 24s24-10.7 24-24l0-64 64 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-64 0 0-64c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 64-64 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l64 0 0 64z"/>
+                </svg>
+                <input type="text" name="tipo_evento" id="tipo_evento" class="form-control" placeholder="Ingrese su Tipo de solicitud">
+                <br>
+                <br>
+                <svg fill="#1C2033" width="52" height="52" viewBox="0 0 384 512">
+                <path d="M80 0C44.7 0 16 28.7 16 64l0 384c0 35.3 28.7 64 64 64l224 0c35.3 0 64-28.7 64-64l0-384c0-35.3-28.7-64-64-64L80 0zm80 432l64 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-64 0c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/>
+                </svg>
+                <input type="text" name="contacto" id="Contacto" class="form-control" placeholder="Ingrese su celular">
+                <br>
+                <svg fill="#1C2033" width="52" height="52" viewBox="0 0 512 512">
+                <path d="M320 64A64 64 0 1 0 192 64a64 64 0 1 0 128 0zm-96 96c-35.3 0-64 28.7-64 64l0 48c0 17.7 14.3 32 32 32l1.8 0 11.1 99.5c1.8 16.2 15.5 28.5 31.8 28.5l38.7 0c16.3 0 30-12.3 31.8-28.5L318.2 304l1.8 0c17.7 0 32-14.3 32-32l0-48c0-35.3-28.7-64-64-64l-64 0zM132.3 394.2c13-2.4 21.7-14.9 19.3-27.9s-14.9-21.7-27.9-19.3c-32.4 5.9-60.9 14.2-82 24.8c-10.5 5.3-20.3 11.7-27.8 19.6C6.4 399.5 0 410.5 0 424c0 21.4 15.5 36.1 29.1 45c14.7 9.6 34.3 17.3 56.4 23.4C130.2 504.7 190.4 512 256 512s125.8-7.3 170.4-19.6c22.1-6.1 41.8-13.8 56.4-23.4c13.7-8.9 29.1-23.6 29.1-45c0-13.5-6.4-24.5-14-32.6c-7.5-7.9-17.3-14.3-27.8-19.6c-21-10.6-49.5-18.9-82-24.8c-13-2.4-25.5 6.3-27.9 19.3s6.3 25.5 19.3 27.9c30.2 5.5 53.7 12.8 69 20.5c3.2 1.6 5.8 3.1 7.9 4.5c3.6 2.4 3.6 7.2 0 9.6c-8.8 5.7-23.1 11.8-43 17.3C374.3 457 318.5 464 256 464s-118.3-7-157.7-17.9c-19.9-5.5-34.2-11.6-43-17.3c-3.6-2.4-3.6-7.2 0-9.6c2.1-1.4 4.8-2.9 7.9-4.5c15.3-7.7 38.8-14.9 69-20.5z"/>
+                </svg>
+                <input type="text" name="direccion" id="direccion" class="form-control"
+                    placeholder="Ingrese su direccion">
+                <br>
+                <br>
+                <svg fill="#1C2033" width="52" height="52" viewBox="0 0 512 512">
+                <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/>
+                </svg>
+                <input type="email" name="email" id="Email"  class="form-control" placeholder="Ingrese su Email">
+                <br>
+                <br>
+                <input id="submit" type="submit" class="btn btn-primary" style="width: 15%; position: relative; bottom: 7%;">
+                
+                <input type="hidden" name="_next" value="http://127.0.0.1:5000">
+                <input type="hidden" name="_captcha" value="false">
+            </form>
+
+            
+
+
+        </div>
+
+
+        <div class="tabla" style="height: 900px;  position: relative; top: 170px; width: 100%;"> 
+            <h3 class="btn btn-dark" style="width: 15%; position: relative; top: 15%; margin-left: 37%; left: 60px;">Equipo</h3>
+                
+            <table class="table table-bordered table-hover" style="position: relative; top: 250px; width: 1100px; margin-left: 300px; left: 20px; ">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Cargo</th>
+                        <th scope="col">Descripcion</th>
+                      </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                        <tr>
+                          <td>Jaime</td>
+                          <td>Retamal</td>
+                          <td>jaim.retamal@duoc.uc.cl</td>
+                          <td>Analista Programador </td>
+                          <td>Responsable de la funcionalidad y programacion de la app web</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>daniel</td>
+                            <td>mendoza</td>
+                            <td>danielmendoza@gmail.com</td>
+                            <td>Ingeniero software</td>
+                            <td>Responsable de la funcionalidad y programacion de la app web</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+        </div>
+
+
+        <div id="comedores" class="comedor">
+
+
+            <div class="centrado">
+
+                
+                <div class="tipo">
+                    <div class="contenedor_img">
+                        <img src="{{ url_for('static',filename='img/tipo2.JPG') }}" alt="">
+                    </div>
+                    <h4>EVENTO</h4>
+                </div>
+
+                <div class="tipo">
+                    <div class="contenedor_img">
+                        <img src="{{ url_for('static',filename='img/tipo2.JPG') }}" alt="">
+                    </div>
+                    <h4>EVENTO</h4>
+                </div>
+
+                <div class="tipo">
+                    <div class="contenedor_img">
+                        <img src="{{ url_for('static',filename='img/tipo2.JPG') }}" alt="">
+                    </div>
+                    <h4>EVENTO</h4>
+                </div>
+
+                <div class="tipo">
+                    <div class="contenedor_img">
+                        <img src="{{ url_for('static',filename='img/tipo2.JPG') }}" alt="">
+                    </div>
+                    <h4>EVENTO</h4>
+                </div>
+
+                <div class="tipo">
+                    <div class="contenedor_img">
+                        <img src="{{ url_for('static',filename='img/tipo2.JPG') }}" alt="">
+                    </div>
+                    <h4>EVENTO</h4>
+                </div>
+                <div class="tipo">
+                    <div class="contenedor_img">
+                        <img src="{{ url_for('static',filename='img/tipo2.JPG') }}" alt="">
+                    </div>
+                    <h4>EVENTO</h4>
+                </div>
+
+                
+            </div>
+        </div>
+
+        <!-- form.123formbuilder.com script begins here -->
+        <!--script type="text/javascript" defer src="https://form.123formbuilder.com/embed/6334573.js" data-role="form" data-default-width="650px"></script>< form.123formbuilder.com script ends here -->
+
+        <div class="map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.267953650199!2d-70.58077518412978!3d-33.598351412505416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662d7037854df81%3A0x893f58a1479b8f82!2sDuoc%20UC%3A%20Sede%20Puente%20Alto!5e0!3m2!1ses!2scl!4v1625250461818!5m2!1ses!2scl"
+                style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <div class="footer">
+            <div class="li">
+                <li>
+                    <a href="index.html">www.blogBussinesEvents.com</a>
+                    <a href="" style="position: relative; left: 70px;">+56931333274</a>
+                </li>
+            </div>
+        </div>
+
+    </div>
+
+
+    
+    <!--script src="https://smtpjs.com/v3/smtp.js"></script-->
+
+    <!--script src="{{ url_for('static', filename='script/enviarExcel.js') }}" type="module"></script-->
+
+    <!--script src="{{ url_for('static', filename='script/blobManager.js') }}" type="module"></script-->
+
+    <script src="{{ url_for('static', filename='script/scroll.js') }}">
+    </script>
+       
+    <script src="{{ url_for('static', filename='script/sweetalert.min.js') }}"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js" type="text/javascript"></script>
+
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+
+  
+    <script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+    
+  
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script src="{{ url_for('static', filename='script/formulario.js') }}"></script>
+
+   
+    
+    <script src="{{ url_for('static', filename='script/papaparse.min.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='script/xlsx.full.min.js') }}"></script>
+
+    
+   
+    <script src="{{ url_for('static', filename='script/fileSaver.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='script/tableexport.min.js') }}"></script>
+
+    
+    <!--script src="{{ url_for('static', filename='script/Dropzone.js') }}" type="module"></script-->
+
+    <script src="{{ url_for('static', filename='script/carrousel.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='script/post.js') }}"></script>
+
+    
+    <!--script src="{{ url_for('static', filename='script/exportExcel.js') }}"></script-->
+    
+   
+
+    <script src="{{ url_for('static', filename='script/acordeon.js') }}"></script>
+
+   
+
+    <script >
+        $(document).ready(function(){
+          $('.slider').bxSlider({
+            auto: true,
+            pause: 2000
+          });
+         });
+    </script>
+
+    <script>
+        $("#guardar").click(function(){
+            var nombre = $("#nombre").val();
+            var apellido = $("#apellido").val();
+            var tipo_evento = $("#tipo_evento").val();
+            var Contacto = $("#Contacto").val();
+            var direccion = $("#direccion").val();
+            var Email = $("#Email").val();
+
+            if(nombre == '' || apellido == '' || tipo_evento == '' || Contacto == '' || direccion == '' || Email == ''){
+                swal({
+                        title: "debe completar los campos requeridos ",
+                        text: "por favor ingrese bien los campos requeridos",
+                        icon: "warning",
+                        button: "Ok",
+                    });
+            }else{
+
+                swal({
+                        title: "Su solicitud a sido Enviada correctamente",
+                        text: "por favor revise su correo",
+                        icon: "success",
+                        button: "Ok",
+                    });
+            }
+            
+        })
+    </script>
+    
+   
+  
+   
+</body>
+
+</html>
